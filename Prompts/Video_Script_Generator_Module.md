@@ -31,10 +31,14 @@ Generate voice-first corporate learning scripts that are:
 
 - `tone_of_voice_module`
 - `cognitive_keyword_watchlist_module`
-- `pedagogy_module` (auto-triggered if instructional metadata is missing)
+- `pedagogy_module` (always invoked)
 - `video_gold_structure_module`
 - `visual_style_module`
 - `videography_direction_module`
+- `instructional_segment_mapper`
+- `learning_theories_checklist_module`
+- `accessibility_module`
+- `theory_enhancement_library` (optional)
 
 ---
 
@@ -52,14 +56,15 @@ Generate voice-first corporate learning scripts that are:
 
 ### ✅ STEP 2: Script Generation Rules
 
-- **Greeting:** `"Hello! And welcome to our session on [topic]."`
-- **Structure:** Hook → Core Message → 3 Key Points → Recap → CTA
-- **Style & Tone:** Guided by `tone_of_voice_module`
-- **Delivery Markers (canvas only):** `[pause]`, `[beat]`, `[emphasise: …]`, `[gesture: …]`, `[pitch lift]`, `[lower tone]`
-- **Segment IDs:** Internal use only
-- **Visuals:** Tag with `visual_suggestion` — do not generate in script
-
----
+- Use `video_gold_structure_module` for segment order and roles.
+- Use `instructional_segment_mapper` to assign segment IDs, roles, and traceability tags.
+- Always invoke `pedagogy_module` to tag segments with Bloom, Gagné, ARCS, SOLO.
+- Use `tone_of_voice_module` for tone and delivery.
+- Use `cognitive_keyword_watchlist_module` for keyword tagging and scoring.
+- Use `visual_style_module` and `videography_direction_module` for visual and gesture metadata.
+- After script generation, run `learning_theories_checklist_module` for pedagogical QA.
+- Run `accessibility_module` to ensure script and metadata are accessible.
+- Optionally, use `theory_enhancement_library` to enrich appendices.
 
 ### ✅ STEP 3: Cue Metadata Per Segment
 
@@ -91,7 +96,7 @@ Generate voice-first corporate learning scripts that are:
 
 - Output the full draft script to **canvas only**
 - Prompt user:
-  > “Please edit the script directly in the canvas. When you’re ready, type ‘Finalise it’ to generate the export document.”
+  > "Please edit the script directly in the canvas. When you're ready, type 'Finalise it' to generate the export document."
 
 ---
 
@@ -111,7 +116,7 @@ Generate voice-first corporate learning scripts that are:
 #### 📄 Document Content Structure (Strict Order)
 
 1. **Document Title**
-    - Matches filename (e.g. “Presentation Skills - Video Script”)
+    - Matches filename (e.g. "Presentation Skills - Video Script")
 
 2. **Segment Breakdown Table**
     - Table:
@@ -127,7 +132,9 @@ Generate voice-first corporate learning scripts that are:
     - Visual Cue Index
     - Scene Direction Seed Table
     - Visual Style Seed Table
-    - Instructional Segment Map
-    - Pedagogical Metadata (if auto-triggered)
+    - Instructional Segment Map (from `instructional_segment_mapper`)
+    - Pedagogical Metadata (from `pedagogy_module` and checked by `learning_theories_checklist_module`)
+    - Accessibility Compliance Report (from `accessibility_module`)
+    - Theory Enhancement Appendix (optional, from `theory_enhancement_library`)
 
 ---
