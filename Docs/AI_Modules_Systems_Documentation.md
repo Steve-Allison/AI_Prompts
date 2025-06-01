@@ -9,6 +9,7 @@ This document provides a technical overview and systems-level reference for all 
 **Purpose**: The meta-prompt defines how AI controllers or orchestration layers engage these modules modularly to scaffold, generate, evaluate, and structure instructional content.
 
 **Meta-Prompt Signature**:
+
 ```python
 include_module("<Module_Name>")
 ```
@@ -16,6 +17,7 @@ include_module("<Module_Name>")
 **Usage Pattern**: The meta-prompt enables dynamic, on-demand loading of registered modules by controllers or prompt agents during asset generation, wireframe planning, or tone validation. Modules should be queried in isolation or in a chain per the workflow schema.
 
 **Example Invocation Chain**:
+
 ```python
 include_module("Video_Script_Generator_Module")
 include_module("Pedagogy_Module")
@@ -43,6 +45,7 @@ Each module below includes versioning, type classification, key functions, retur
 ## 🔁 Workflow Chains
 
 **Typical Chain**:
+
 1. `Video_Script_Generator_Module`
 2. → `Pedagogy_Module`, `Tone_of_Voice_Module`, `Accessibility_Module`
 3. → `Learning_Asset_Module`, `Visual_Style_Module`
@@ -55,6 +58,7 @@ Each module below includes versioning, type classification, key functions, retur
 ---
 
 ## 🧩 Integration Patterns
+
 - All modules support `include_module()` invocation.
 - Returns are composable and schema-aligned.
 - Registry is manually maintained unless paired with a controller AI or orchestrator.
@@ -62,6 +66,7 @@ Each module below includes versioning, type classification, key functions, retur
 ---
 
 ## 📌 Notes
+
 - Version control is enforced manually.
 - Modules are intended to be interoperable with minimal coupling.
 - Full audit trail is available via the Module Registry.
