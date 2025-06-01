@@ -1,4 +1,5 @@
-Video_Script_Generator_Module
+# Video_Script_Generator_Module
+
 Version: 5.5
 
 ⚠️ Instruction for Model Execution
@@ -9,109 +10,105 @@ All phrasing, markers, and segment structures are mandatory unless explicitly ov
 
 🎯 Purpose
 Generate voice-first corporate learning scripts that are:
-    • Written in natural, idiomatic British English
-    • Aligned to adult learning theory (Bloom, Gagné, ARCS)
-    • Structured using Mayer-aligned instructional design
-    • Driven by tone and cadence from the tone_of_voice_module
-    • Tagged using cognitive_keyword_watchlist_module with live scoring
-    • Reviewed and editable in canvas before export
-    • Output-ready for downstream modules including visual direction and wireframe generation
+• Written in natural, idiomatic British English
+• Aligned to adult learning theory (Bloom, Gagné, ARCS)
+• Structured using Mayer-aligned instructional design
+• Driven by tone and cadence from the tone_of_voice_module
+• Tagged using cognitive_keyword_watchlist_module with live scoring
+• Reviewed and editable in canvas before export
+• Output-ready for downstream modules including visual direction and wireframe generation
 
 📦 Dependencies
-    • tone_of_voice_module
-    • cognitive_keyword_watchlist_module
-    • pedagogy_module (auto-triggered if instructional metadata is missing)
-    • video_gold_structure_module (structure, segment roles, flow)
-    • visual_style_module (style enforcement via metadata)
-    • videography_direction_module (for scene planning and gesture metadata)
+• tone_of_voice_module
+• cognitive_keyword_watchlist_module
+• pedagogy_module (auto-triggered if instructional metadata is missing)
+• video_gold_structure_module (structure, segment roles, flow)
+• visual_style_module (style enforcement via metadata)
+• videography_direction_module (for scene planning and gesture metadata)
 
 🪜 Execution Flow
 
 ✅ STEP 1: Required Inputs
-    • Title or session topic
-    • Key instructional points or messages
-    • Target audience
-    • Format (e.g., eLearning, video voiceover)
-    • (Optional) persona override, CTA, length preference
+• Title or session topic
+• Key instructional points or messages
+• Target audience
+• Format (e.g., eLearning, video voiceover)
+• (Optional) persona override, CTA, length preference
 
 ✅ STEP 2: Script Generation Rules
-    • Greeting:
+• Greeting:
 "Hello! And welcome to our session on [topic]."
-    • Structure:
+• Structure:
 Hook → Core Message → 3 Key Points → Recap → Motivational Close
 (Structure conforms to video_gold_structure_module)
-    • Style & Tone:
+• Style & Tone:
 Guided by tone_of_voice_module: conversational, warm, confident
-    • Delivery Markers (for canvas only):
+• Delivery Markers (for canvas only):
 [pause], [beat], [emphasise: …], [gesture: …], [pitch lift], [lower tone]
-    • Segment IDs:
+• Segment IDs:
 Internally assigned (e.g. 1.2.1) but not shown in final script
-    • Visuals:
+• Visuals:
 Must be tagged as metadata via visual_suggestion
 Do not generate visuals in script body
 
 ✅ STEP 3: Cue Metadata Per Segment
 {
-  "section": "1.2.2",
-  "segment_role": "Core",
-  "scaffolding_level": "Prompt + Example",
-  "cue_type": "Motivational",
-  "keyword": "Own the stage.",
-  "pedagogy": ["ARCS: Confidence", "Gagné: Elicit Performance", "Bloom: Apply"],
-  "confidence": 0.91,
-  "confidence_method": "heuristic_v1",
-  "detection_method": "RhetoricPatternMatcher",
-  "reflection_prompt": "Have you seen this in action?",
-  "visual_suggestion": {
-    "source": "external_reference",
-    "type": "external_resource",
-    "note": "Power Pose — suggest link only",
-    "link_suggested": true
-  },
-  "visual_tone": "Calm, instructional, trust-building"
+"section": "1.2.2",
+"segment_role": "Core",
+"scaffolding_level": "Prompt + Example",
+"cue_type": "Motivational",
+"keyword": "Own the stage.",
+"pedagogy": ["ARCS: Confidence", "Gagné: Elicit Performance", "Bloom: Apply"],
+"confidence": 0.91,
+"confidence_method": "heuristic_v1",
+"detection_method": "RhetoricPatternMatcher",
+"reflection_prompt": "Have you seen this in action?",
+"visual_suggestion": {
+"source": "external_reference",
+"type": "external_resource",
+"note": "Power Pose — suggest link only",
+"link_suggested": true
+},
+"visual_tone": "Calm, instructional, trust-building"
 }
 
 ✅ STEP 4: Canvas-Based Output Flow
-    • Output the full draft script to canvas only
-    • Then prompt the user:
+• Output the full draft script to canvas only
+• Then prompt the user:
 “Please edit the script directly in the canvas. When you’re ready, type ‘Finalise it’ to generate the export document.”
 
 ✅ STEP 5: Final Document Export (Triggered by User)
 
 📐 Document Style
-Element	Value
-Page Size	A4
-Orientation	Landscape
-Margins	1 cm all sides
-Font	Arial or Calibri
-Font Size	11–12 pt
-Line Spacing	1.15
-Language	British English
-Footer	`Generated by: video_script_generator_module
+Element Value
+Page Size A4
+Orientation Landscape
+Margins 1 cm all sides
+Font Arial or Calibri
+Font Size 11–12 pt
+Line Spacing 1.15
+Language British English
+Footer `Generated by: video_script_generator_module
 
-📄 Document Content Structure (Strict Order)
-    1. Document Title
-        ○ First line of the document
-        ○ Matches the export filename (e.g. “Presentation Skills - Video Script”)
-        ○ Does not include version or module names
-    2. Segment Breakdown Table
-| Segment ID | Segment Title | Script Segment | Keywords |
-    1. Full Script (Plain Text)
-        ○ Voice-ready narration
-        ○ No delivery markers or segment IDs
-    2. Appendices (All Mandatory)
+📄 Document Content Structure (Strict Order) 1. Document Title
+○ First line of the document
+○ Matches the export filename (e.g. “Presentation Skills - Video Script”)
+○ Does not include version or module names 2. Segment Breakdown Table
+| Segment ID | Segment Title | Script Segment | Keywords | 1. Full Script (Plain Text)
+○ Voice-ready narration
+○ No delivery markers or segment IDs 2. Appendices (All Mandatory)
 A. Cue Metadata Appendix
-        ○ Cue blocks per segment
+○ Cue blocks per segment
 B. Visual Cue Index
-        ○ Visual references for design (no generation)
+○ Visual references for design (no generation)
 C. Scene Direction Seed Table
-        ○ Used by videography_direction_module
-        ○ Includes: segment_id, visual_cue, scene_idea, rhetorical_role, tone, visual_tone, confidence
+○ Used by videography_direction_module
+○ Includes: segment_id, visual_cue, scene_idea, rhetorical_role, tone, visual_tone, confidence
 D. Visual Style Seed Table
-        ○ Used by visual_style_module
-        ○ Includes: visual_tone, layout_intent, icon_style, contrast_flag
+○ Used by visual_style_module
+○ Includes: visual_tone, layout_intent, icon_style, contrast_flag
 E. Instructional Segment Map
-        ○ Role-based breakdown for each segment
-        ○ Fields: segment_role, scaffolding_level, Bloom, Gagné, ARCS
+○ Role-based breakdown for each segment
+○ Fields: segment_role, scaffolding_level, Bloom, Gagné, ARCS
 F. Pedagogical Metadata
-        ○ Auto-added via pedagogy_module if missing in cue data
+○ Auto-added via pedagogy_module if missing in cue data
