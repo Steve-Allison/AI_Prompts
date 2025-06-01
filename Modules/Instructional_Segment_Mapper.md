@@ -3,7 +3,7 @@
 **Status**: 🔒 Locked and registered  
 **Type**: Metadata mapping logic module  
 **Callable by**: Script, wireframe, or storyboard generators  
-**Dependencies**: `Pedagogy_Module`, `Video_Gold_Structure_Module`  
+**Dependencies**: Pedagogy_Module, Video_Gold_Structure_Module  
 **Primary Function**: Assigns structural and instructional tags to each scene or script segment for traceability and sequencing.
 
 **Returns**:
