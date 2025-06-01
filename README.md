@@ -67,6 +67,7 @@ include_module("Cognitive_Keyword_Watchlist_Module")
 ## 🗂 Structure
 
 Each module is stored as a versioned Markdown specification with the following:
+
 - Purpose
 - Callable scope
 - Dependencies
@@ -87,6 +88,7 @@ Each module is stored as a versioned Markdown specification with the following:
 ## 🛠 Contributing
 
 To add a new module, submit a markdown spec following the existing format with:
+
 - A unique name
 - A version number
 - A clear primary function and return schema
