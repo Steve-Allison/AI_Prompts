@@ -110,3 +110,34 @@ Use full sentences and plain language throughout.
 Avoid jargon, acronyms, or unnecessarily complex vocabulary unless required for accuracy or compliance with industry standards.
 
 ---
+
+# 1_Learning_Gaps_and_Goals_Prompt (Token-Efficient)
+
+**Instruction:**  
+Use plain British English. Ask only for:
+1. Course title
+2. Target learner group (role, experience)
+3. Critical on-the-job action to improve
+4. Current baseline (metric/description)
+5. Target performance/KPI & timeframe
+6. Root cause (knowledge/skill/motivation/environment)
+7. Planned assessment/evidence
+Optional: Bloom level, delivery/compliance needs, tools/scenarios, special needs
+
+**After input:**
+A. Write one sentence describing the current gap (with baseline & target)
+B. Write one broad, learner-centred goal (why it matters)
+C. Write one objective using ABCD, Bloom verb, and SMART
+
+**Validate:**  
+- Auto-check with modules: Learner_Outcomes_Module (SMART), Learning_Theories_Checklist_Module (theory tags), Cognitive_Keyword_Watchlist_Module (terminology/load).
+- If checks fail, auto-repair once or flag for SME.
+- Output:  
+  - Gap: ...  
+  - Goal: ...  
+  - Objective: Audience/Behaviour/Condition/Degree (Bloom: ..., SMART: ...), QA status
+
+**Appendix: Theory Alignment Table**  
+Flag all inferred values with * and explain briefly in Notes.
+
+---
