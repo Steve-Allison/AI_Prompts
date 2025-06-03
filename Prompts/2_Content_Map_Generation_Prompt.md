@@ -1,5 +1,6 @@
-# Content Map Generation Prompt (Consolidated, Efficient)
+# Content_Map_Generation_Prompt
 
+Version 1.0
 ---
 
 ## GLOBAL INSTRUCTIONS

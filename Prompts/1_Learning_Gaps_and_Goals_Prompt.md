@@ -1,4 +1,4 @@
-# Learning Experience Design Framework
+# 1_Learning_Gaps_and_Goals_Prompt
 
 Version: 2.1
 Last Updated: 2025-06-01
