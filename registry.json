@@ -1,155 +1,113 @@
 {
   "modules": [
     {
-      "name": "Learning_Asset_Module",
-      "version": "1.2",
+      "name": "Cognitive_Keyword_Watchlist_Module",
+      "version": "1.0.0",
+      "dependencies": [],
       "returns": [
-        "asset_type",
-        "title",
-        "learning_objective",
-        "description",
-        "layout",
-        "style_applied",
-        "format",
-        "export_instructions"
-      ]
-    },
-    {
-      "name": "Visual_Style_Module",
-      "version": "1.1",
-      "returns": [
-        "visual_style",
-        "framing",
-        "tone_alignment",
-        "motion_guidance",
-        "color_palette",
-        "accessibility_considerations"
+        "key_terms",
+        "threshold_concepts",
+        "trouble_spots",
+        "concept_map",
+        "cognitive_complexity_ratings"
       ]
     },
     {
       "name": "Pedagogy_Module",
-      "version": "1.2",
+      "version": "1.0.0",
+      "dependencies": [],
       "returns": [
-        "bloom_level",
-        "pedagogical_tags",
-        "segment_traceability"
-      ]
-    },
-    {
-      "name": "Tone_of_Voice_Module",
-      "version": "1.2",
-      "returns": [
-        "tone_tag",
-        "delivery_style",
-        "voice_markers",
-        "audience_alignment",
-        "emotion_cue"
-      ]
-    },
-    {
-      "name": "Accessibility_Module",
-      "version": "1.1",
-      "returns": [
-        "accessibility_flags",
-        "alt_text_description",
-        "contrast_guidance",
-        "caption_style",
-        "reading_level"
-      ]
-    },
-    {
-      "name": "Cognitive_Keyword_Watchlist_Module",
-      "version": "3.1",
-      "returns": [
-        "watchlist_matches",
-        "segment_confidence_score",
-        "keyword_density",
-        "cognitive_flags",
-        "engagement_profile",
-        "keyword_classification"
-      ]
-    },
-    {
-      "name": "Video_Script_Generator_Module",
-      "version": "5.5",
-      "returns": [
-        "script_segments",
-        "cue_metadata",
-        "scene_direction_seed_table",
-        "instructional_segment_map",
-        "visual_style_appendix"
-      ]
-    },
-    {
-      "name": "Video_Gold_Structure_Module",
-      "version": "2.2",
-      "returns": [
-        "segment_role",
-        "sequencing_guidelines",
-        "scaffolding_levels",
-        "scene_validation_report"
-      ]
-    },
-    {
-      "name": "Storyboard_Generation_Module",
-      "version": "5.2",
-      "returns": [
-        "wireframe_docx",
-        "presenter_image_prompts",
-        "metadata_appendix"
-      ]
-    },
-    {
-      "name": "Videography_Direction_Module",
-      "version": "2.0",
-      "returns": [
-        "gesture_direction",
-        "camera_movement",
-        "framing_guidelines",
-        "presenter_style"
-      ]
-    },
-    {
-      "name": "Learning_Theories_Checklist_Module",
-      "version": "1.0",
-      "returns": [
-        "missing_tags_report",
-        "bloom_alignment_status",
-        "remediation_suggestions",
-        "completeness_score"
-      ]
-    },
-    {
-      "name": "Instructional_Segment_Mapper",
-      "version": "1.0",
-      "returns": [
-        "segment_id",
-        "segment_role",
-        "gagne_event",
-        "scaffolding_level",
-        "traceability_status"
+        "learning_theories_applied",
+        "blooms_taxonomy_levels",
+        "pedagogical_approaches"
       ]
     },
     {
       "name": "Learning_Activity_Generator_Module",
-      "version": "1.2",
+      "version": "1.0.0",
+      "dependencies": ["Cognitive_Keyword_Watchlist_Module"],
       "returns": [
-        "activity_type",
-        "activity_prompt",
-        "target_objective",
-        "assessment_alignment",
-        "scaffolding_level",
-        "delivery_format"
+        "learning_activities",
+        "activity_instructions",
+        "assessment_items",
+        "modality_mapping"
       ]
     },
     {
-      "name": "Theory_Enhancement_Library",
-      "version": "1.0",
+      "name": "Misconception_Check_Module",
+      "version": "1.1.0",
+      "dependencies": ["Cognitive_Keyword_Watchlist_Module"],
       "returns": [
-        "theory_snippet",
-        "framework_summary",
-        "reference_citation",
-        "alignment_tag"
+        "misconception_profiles",
+        "diagnostic_questions",
+        "corrective_strategies",
+        "formative_assessments"
+      ]
+    },
+    {
+      "name": "Differentiation_Scaffolding_Module",
+      "version": "1.1.0",
+      "dependencies": ["Learning_Activity_Generator_Module", "Misconception_Check_Module"],
+      "returns": [
+        "tiered_activities",
+        "scaffolding_strategies",
+        "extension_activities",
+        "differentiation_guidance"
+      ]
+    },
+    {
+      "name": "Visual_Style_Module",
+      "version": "1.0.0",
+      "dependencies": [],
+      "returns": [
+        "visual_design_specs",
+        "style_guide",
+        "visual_hierarchy",
+        "design_assets"
+      ]
+    },
+    {
+      "name": "Accessibility_Module",
+      "version": "1.0.0",
+      "dependencies": ["Visual_Style_Module"],
+      "returns": [
+        "accessibility_report",
+        "wcag_compliance_status",
+        "remediation_guidance",
+        "accessibility_metadata"
+      ]
+    },
+    {
+      "name": "Instructional_Segment_Mapper",
+      "version": "1.0.0",
+      "dependencies": ["Cognitive_Keyword_Watchlist_Module", "Pedagogy_Module"],
+      "returns": [
+        "segment_map",
+        "timing_estimates",
+        "transition_guidance",
+        "sequencing_recommendations"
+      ]
+    },
+    {
+      "name": "Tone_of_Voice_Module",
+      "version": "1.0.0",
+      "dependencies": [],
+      "returns": [
+        "voice_style_guide",
+        "tone_recommendations",
+        "language_guidelines",
+        "audience_alignment"
+      ]
+    },
+    {
+      "name": "Learning_Asset_Module",
+      "version": "1.0.0",
+      "dependencies": ["Visual_Style_Module", "Accessibility_Module"],
+      "returns": [
+        "asset_specifications",
+        "production_guidelines",
+        "delivery_formats",
+        "metadata_schema"
       ]
     }
   ]

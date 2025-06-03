@@ -20,24 +20,55 @@ The system is intended to support prompt-based AI tools, controller agents, lear
 
 ## 🧩 Module Overview
 
-The following modules are registered and version-controlled:
+### Module Interdependencies
 
-| Module Name                          | Function                                                                                   |
-|-------------------------------------|--------------------------------------------------------------------------------------------|
-| `Learning_Asset_Module`             | Plans instructional asset format, structure, and layout.                                  |
-| `Visual_Style_Module`               | Defines tone-appropriate visual direction and framing.                                    |
-| `Pedagogy_Module`                   | Tags and aligns content to learning theories (Bloom, Gagné, ARCS, SOLO, etc.).            |
-| `Tone_of_Voice_Module`              | Aligns voice and delivery tone to emotion and audience.                                   |
-| `Accessibility_Module`              | Applies WCAG and inclusive design adaptations.                                             |
-| `Cognitive_Keyword_Watchlist_Module`| Tracks cognitively/emotionally salient terms and profiles audience engagement.            |
-| `Video_Script_Generator_Module`     | Generates full instructional scripts from input goals and metadata.                       |
-| `Video_Gold_Structure_Module`       | Validates sequencing and instructional flow of scenes.                                    |
-| `Storyboard_Generation_Module`      | Builds wireframes and visual storyboards from scripts.                                    |
-| `Videography_Direction_Module`      | Provides cinematographic guidance for presenters and media teams.                         |
-| `Learning_Theories_Checklist_Module`| Performs QA checks on pedagogical completeness.                                           |
-| `Instructional_Segment_Mapper`      | Maps segments to structure, role, theory tags, and scaffolding levels.                    |
-| `Learning_Activity_Generator_Module`| Generates scaffolded activities aligned to objectives and audience level.                 |
-| `Theory_Enhancement_Library`        | Supplies contextual academic theory snippets and citations.                               |
+Modules are designed to work together in the following sequence:
+
+1. **Foundation Modules** (run first):
+
+   - `Cognitive_Keyword_Watchlist_Module` - Identifies key concepts and terms
+   - `Pedagogy_Module` - Applies learning theories
+   - `Tone_of_Voice_Module` - Sets communication style
+
+2. **Content Development Modules** (run second):
+
+   - `Learning_Activity_Generator_Module` - Creates core activities
+   - `Differentiation_Scaffolding_Module` - Adds support and challenge layers
+   - `Misconception_Check_Module` - Identifies and addresses learning barriers
+   - `Theory_Enhancement_Library` - Adds academic depth
+
+3. **Presentation & Delivery** (run third):
+   - `Visual_Style_Module` - Applies visual design
+   - `Accessibility_Module` - Ensures inclusivity
+   - `Learning_Asset_Module` - Structures final outputs
+
+### Module Reference
+
+| Module Name                          | Function                                                                               | Key Dependencies                                                           |
+| ------------------------------------ | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Learning_Asset_Module`              | Plans instructional asset format, structure, and layout.                               | `Visual_Style_Module`, `Accessibility_Module`                              |
+| `Visual_Style_Module`                | Defines tone-appropriate visual direction and framing.                                 | `Tone_of_Voice_Module`                                                     |
+| `Pedagogy_Module`                    | Tags and aligns content to learning theories.                                          | `Cognitive_Keyword_Watchlist_Module`                                       |
+| `Tone_of_Voice_Module`               | Aligns voice and delivery tone to emotion and audience.                                | None (foundational)                                                        |
+| `Accessibility_Module`               | Applies WCAG and inclusive design adaptations.                                         | `Visual_Style_Module`                                                      |
+| `Cognitive_Keyword_Watchlist_Module` | Tracks cognitively/emotionally salient terms and profiles audience engagement.         | None (foundational)                                                        |
+| `Video_Script_Generator_Module`      | Generates full instructional scripts from input goals and metadata.                    | `Cognitive_Keyword_Watchlist_Module`, `Tone_of_Voice_Module`               |
+| `Learning_Theories_Checklist_Module` | Performs QA checks on pedagogical completeness.                                        | `Pedagogy_Module`                                                          |
+| `Instructional_Segment_Mapper`       | Maps segments to structure, role, theory tags, and scaffolding levels.                 | `Cognitive_Keyword_Watchlist_Module`, `Pedagogy_Module`                    |
+| `Learning_Activity_Generator_Module` | Generates scaffolded activities aligned to objectives and audience level.              | `Pedagogy_Module`, `Cognitive_Keyword_Watchlist_Module`                    |
+| `Theory_Enhancement_Library`         | Supplies contextual academic theory snippets and citations.                            | `Pedagogy_Module`                                                          |
+| `Misconception_Check_Module`         | Surfaces, explains, and provides corrective strategies for common misconceptions.      | `Cognitive_Keyword_Watchlist_Module`, `Learning_Activity_Generator_Module` |
+| `Differentiation_Scaffolding_Module` | Generates scaffolded supports and extension/challenge activities for diverse learners. | `Learning_Activity_Generator_Module`, `Misconception_Check_Module`         |
+
+### Glossary of Key Terms
+
+- **Scaffolded Support**: Modified versions of activities with additional structure, hints, or resources to support learners who need extra help.
+- **Extension/Challenge**: Additional or more complex tasks for learners who have mastered the core content.
+- **Formative Question**: A question designed to check understanding and provide feedback during the learning process.
+- **Threshold Concept**: A core idea that is essential for understanding a subject but may be challenging for learners.
+- **Cognitive Load**: The amount of mental effort required for learning, which should be managed effectively.
+- **Pedagogical Alignment**: Ensuring teaching methods match learning objectives and theories.
+- **Inclusive Design**: Creating content that is accessible to all learners, regardless of ability or background.
 
 ---
 
@@ -79,7 +110,7 @@ Each module is stored as a versioned Markdown specification with the following:
 
 ## 📌 Notes
 
-- Modules are locked on registration (`🔒`) and updated through version control.
+- Modules are updated through version control.
 - This repository supports instructional design teams, AI prompt engineers, and modular orchestration toolchains.
 - Extendable via controller logic or metadata frameworks.
 
