@@ -1,201 +1,121 @@
-Performing a Whole Body Presentation – Workshop Manual 
-|  3
-Emily Scott – One-pager
-Name:
-Short Bio:
-Who is it?
-Goals & Aspirations
-Main Goals & Drivers:
-Barriers to Learning
-Personal Data
-Technology
-Digital Learning Preferences 
-Perception of Digital Learning
-Technology Considerations
-Persona 
-Template
-Emily Scot
-Age: 27, M.Sc. in Computer Science
-Ambitious early-career Solutions Consultant in Adobe’s 
-Digital Experience division, with 2 years at Adobe & a 
-background in digital marketing technology.  
-▪Pre-sales technical consultant supporting the UK & Ireland 
-sales team.
-▪Partners with account executives to craf demos & workshops 
-for Adobe Experience Cloud products. 
-▪
-Build deep product mastery across AEM, Real-Time CDP, 
-Analytics, etc.  
-▪
-Master Adobe’s enterprise sales cycle & consultative selling 
-techniques.  
-▪
-Excel in delivering compelling, audience-tailored demos & 
-presentations.  
-▪
-Develop strong communication & interpersonal (“sof”) skills for 
-client engagement.  
-▪
-Achieve Adobe product certiﬁcations & progress toward a Senior 
-Solutions Consultant role. 
-▪
-Overwhelming breadth of Adobe’s DX product ecosystem; diﬃculty 
-prioritizing topics.  
-▪
-Limited dedicated time for training due to packed schedule of client work.  
-▪
-Lack of hands-on exposure to advanced solution integrations, making 
-concepts abstract.  
-▪
-Hesitation to ask questions for fear of revealing knowledge gaps.  
-▪
-Diﬃculty ﬁltering relevant information from numerous internal resources.  
-▪
-Although ﬂuent, English is Emily’s second language, so idiomatic or 
-jargon-heavy learning materials can sometimes slow comprehension
-▪
-Enthusiastic: views e-learning as essential & convenient for fast-moving 
-tech.  
-▪
-Values high-quality, interactive content; disengages with static/theoretical 
-materials.  
-▪
-Sees digital learning as complementing on-the-job experience & 
-mentoring.  
-▪
-Feels most conﬁdent when learning is clear, culturally inclusive, and 
-complemented by visual cues or real-time Q&A
-▪
-Prefers bite-sized (10-20 min) modules & interactive, hands-on labs.  
-▪
-Watches on-demand webinars/videos during commutes; likes 
-pause/replay ﬂexibility.  
-▪
-Engages in community / forums (Adobe Experience League, Slack) for 
-social learning.  
-▪
-Motivated by gamiﬁcation: badges, points, certiﬁcation prep paths.  
-▪
-Enjoys in-person workshops and oﬃce-based learning, where she can 
-engage socially and absorb content through discussion.
-▪
-Uses work laptop (primary) & smartphone (on the go); needs 
-oﬄine access for travel.  
-▪
-Learning in small time pockets; requires bookmarkable progress 
-& recordings. 
-▪
-Single sign-on ease important; VPN/log-in hurdles can deter 
-quick learning.  
-▪
-Interactive prompts & transcripts help maintain focus amid 
-multitasking.  
-▪
-Values learning materials with transcripts, glossaries, or visuals 
-that reinforce key concepts – especially helpful for navigating 
-second-language nuance
-CONTENTS
+# Adobe Solutions Consultant – Learner Personas
 
+---
 
-Adobe Solutions Consultant – Learning Personas 
-| 
-4
-LEARNING PERSONAS
-Mark Davis – One-pager
-Name:
-Short Bio:
-Who is it?
-Goals & Aspirations
-Main Goals & Drivers:
-Barriers to Learning
-Personal Data
-Technology
-Digital Learning Preferences 
-Perception of Digital Learning
-Technology Considerations
-Persona 
-Template
-Mark Davis
-Age: 45, B.Sc. in Computer Science
-Veteran Solutions Consultant with ~18 years in tech, 
-7 years at Adobe; principal technical adviser on complex 
-deals.
-▪Senior pre-sales technical lead for Field Sales, engaging 
-stakeholders from marketing managers to CIOs.
-▪Designs custom demos, leads workshops, & strategizes deal 
-positioning against competitors. 
-▪
-Keep product knowledge current on new releases & emerging 
-technologies (e.g., AI features, data privacy).  
-▪
-Reﬁne consultative selling: value propositions, ROI arguments, 
-discovery techniques for C-level audiences.  
-▪
-Drive sales success & win major deals; maintain high win-rate.  
-▪
-Mentor junior consultants; develop management/coaching skills 
-toward leadership role.  
-▪
-Adapt continuously to new digital paradigms & industry trends.  
-▪
-Severe time constraints: fully booked calendar with client & travel 
-commitments.  
-▪
-Few advanced training materials; basic courses feel too elementary.  
-▪
-“Experience trap”: reluctance to unlearn long-standing habits & adopt new 
-methods.  
-▪
-Reactive vs. proactive learning: prioritises immediate client deliverables 
-over formal training.  
-▪
-Connectivity constraints: Frequent travel means Mark ofen lacks stable 
-internet. If content can't be downloaded for oﬄine access, it is likely to be 
-skipped.
-▪
-Pragmatic view: sees e-learning as necessary supplement to hands-on 
-experience, not a replacement.  
-▪
-Expects high-quality, concise, expert-led content; critical of shallow or 
-slow-paced materials.  
-▪
-Appreciates ﬂexibility to pause, rewind, & access content 24/7 around his 
-unpredictable schedule.  
-▪
-Selective about platforms — expects expert-level content, clean UX, and 
-clear practical value. 
-▪
-Prefers just-in-time, self-directed learning - consults documentation, 
-release notes, & targeted resources for speciﬁc needs.  
-▪
-Values expert-led webinars & live sessions (or recordings at 1.5× speed) 
-with Q&A for advanced use cases.  
-▪
-Learns via case studies, peer war stories, & internal project post-mortems 
-for concrete, applicable insights.  
-▪
-Selectively uses e-learning modules, skipping to advanced sections & 
-preferring accompanying transcripts/slides.  
-▪
-Selective about platforms – expects clean UX, fast navigation, and the 
-ability to skip to relevant expert-level content
-▪
-Uses work laptop (primary), tablet while travelling, and occasionally 
-smartphone – all learning must be mobile-friendly and easy to 
-access oﬄine.  
-▪
-Needs oﬄine access for travel – Ofen downloads learning content in 
-advance while travelling – prefers formats that work oﬄine (e.g., 
-PDFs, video ﬁles, HTML guides).
-▪
-Learning in small time pockets; requires bookmarkable progress & 
-recordings. 
-▪
-Actively learns through internal Slack channels and technical blogs, 
-preferring peer-shared insights over formal modules.
-▪
-Interactive prompts & transcripts help maintain focus amid 
-multitasking.  
-CONTENTS
+## Persona 1 – Emily Scott
 
+```json learner_profile
+{
+  "name": "Emily Scott",
+  "role": "Solutions Consultant (Pre‑sales)",
+  "career_stage": "early-career",
+  "company": "Adobe",
+  "location": "United Kingdom & Ireland",
+  "age": 27,
+  "education": "MSc Computer Science",
+  "experience_years": 2,
+  "background": "Digital marketing technology",
+  "primary_responsibilities": [
+    "Pre‑sales technical consultant supporting the UK & Ireland sales team",
+    "Partner with account executives to craft demos and workshops for Adobe Experience Cloud products"
+  ],
+  "goals": [
+    "Build deep product mastery across AEM, Real‑Time CDP, Analytics, etc.",
+    "Master Adobe’s enterprise sales cycle and consultative selling techniques",
+    "Excel in delivering compelling, audience‑tailored demos & presentations",
+    "Develop strong communication and interpersonal skills for client engagement",
+    "Achieve Adobe product certifications",
+    "Progress toward a Senior Solutions Consultant role"
+  ],
+  "barriers_to_learning": [
+    "Overwhelming breadth of Adobe’s DX product ecosystem; difficulty prioritising topics",
+    "Limited dedicated time for training due to packed client schedule",
+    "Lack of hands‑on exposure to advanced solution integrations, making concepts abstract",
+    "Hesitation to ask questions for fear of revealing knowledge gaps",
+    "Difficulty filtering relevant information from numerous internal resources",
+    "English is a second language – idiomatic or jargon‑heavy material slows comprehension"
+  ],
+  "learning_preferences": [
+    "Views e‑learning as essential & convenient for fast‑moving tech",
+    "Values high‑quality, interactive content; disengages with static/theoretical materials",
+    "Prefers bite‑sized (10‑20 min) modules & interactive, hands‑on labs",
+    "Watches on‑demand webinars/videos during commutes; likes pause/replay flexibility",
+    "Engages in community forums (Experience League, Slack) for social learning",
+    "Motivated by gamification (badges, points, certification paths)",
+    "Enjoys in‑person workshops where she can learn through discussion"
+  ],
+  "technology": {
+    "devices": ["work laptop", "smartphone"],
+    "requirements": [
+      "offline access for travel",
+      "bookmarkable progress & recordings",
+      "single sign‑on ease; VPN hurdles deter quick learning",
+      "interactive prompts & transcripts to maintain focus"
+    ]
+  }
+}
+```
 
+### Narrative snapshot
+Ambitious early‑career Solutions Consultant in Adobe’s Digital Experience division. Emily thrives on practical, interactive learning that fits into micro‑time slots and helps her quickly master Adobe’s vast DX ecosystem without feeling overwhelmed.
+
+---
+
+## Persona 2 – Mark Davis
+
+```json learner_profile
+{
+  "name": "Mark Davis",
+  "role": "Senior Solutions Consultant",
+  "career_stage": "seasoned",
+  "company": "Adobe",
+  "location": "Global – frequently travelling",
+  "age": 45,
+  "education": "BSc Computer Science",
+  "experience_years": 18,
+  "years_at_adobe": 7,
+  "primary_responsibilities": [
+    "Senior pre‑sales technical lead for field sales, engaging stakeholders from marketing managers to CIOs",
+    "Design custom demos, lead workshops & strategise deal positioning against competitors",
+    "Mentor junior consultants"
+  ],
+  "goals": [
+    "Keep product knowledge current on new releases & emerging technologies (AI, data privacy)",
+    "Refine consultative selling: value propositions, ROI arguments, discovery techniques for C‑level",
+    "Drive sales success & win major deals; maintain high win‑rate",
+    "Mentor junior consultants; develop management/coaching skills toward leadership",
+    "Adapt continuously to new digital paradigms & industry trends"
+  ],
+  "barriers_to_learning": [
+    "Severe time constraints with client & travel commitments",
+    "Few advanced training materials; basic courses feel elementary",
+    "Reluctance to unlearn long‑standing habits",
+    "Prioritises immediate client deliverables over formal training",
+    "Connectivity constraints: often lacks stable internet during travel",
+    "Critical of shallow or slow‑paced materials"
+  ],
+  "learning_preferences": [
+    "Pragmatic: sees e‑learning as supplement to hands‑on experience",
+    "Values concise, expert‑led, high‑quality content",
+    "Prefers just‑in‑time, self‑directed learning (docs, release notes) for specific needs",
+    "Values expert‑led webinars & live sessions (or recordings at 1.5×) with Q&A",
+    "Learns via case studies, peer war stories & project post‑mortems",
+    "Selectively uses e‑learning modules, skipping to advanced sections",
+    "Expects clean UX, fast navigation, ability to download content for offline use"
+  ],
+  "technology": {
+    "devices": ["work laptop", "tablet", "smartphone"],
+    "requirements": [
+      "mobile‑friendly & offline‑capable",
+      "downloadable PDFs, videos, HTML guides",
+      "bookmarkable progress & recordings",
+      "interactive prompts & transcripts to stay focused"
+    ]
+  }
+}
+```
+
+### Narrative snapshot
+A veteran technical adviser on complex deals, Mark is ruthlessly selective about learning time. He demands advanced, expert‑level insights he can consume offline and apply instantly to high‑stakes client engagements.
+
+---

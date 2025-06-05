@@ -1,125 +1,154 @@
 # Unified Content‑Map Generation & Analysis Prompt
 
-## 0  Source Materials (OneDrive, read‑only)
+_(version 3 – incorporates regex fallbacks, resilient JSON extraction, and per‑module default export)_
 
-All mandatory files reside in the project’s OneDrive folder (read‑only):
+---
+
+## ⚠️ Execution Directive
+
+All instructions in this prompt are **mandatory**. Do **not** skip, approximate or substitute any step.  
+If a requirement is unmet, **halt immediately** and output a single bullet‑list error report.  
+Placeholder or partial outputs are **forbidden**.
+
+---
+
+## 0 Source Materials (OneDrive, read‑only)
 
 `https://adobe-my.sharepoint.com/:f:/p/sallison/EqVn3P8pbLZCsEiPMzojt_UBjdgSJ32e8W1TJ8nTRkQP8g`
 
-| Purpose                                | **Exact File Name**                       |
-| -------------------------------------- | ----------------------------------------- |
-| Course structure (8‑module outline)    | **Essentials_course_structure.md**        |
-| Learning gap, goal & objectives        | **Marketo_Essentials_Learning_Design.md** |
-| Prompt‑module definitions              | **ai_prompt_modules_minimal.md**          |
-| Authoring instructions for content map | **Content_Map_Instructions_v3.md**        |
-| Target‑audience personas               | **Adobe_Sellers_Learner_Personas.md**     |
+| Purpose                                | **Exact / Pattern‑Matched File Name**                                         |
+| -------------------------------------- | ----------------------------------------------------------------------------- |
+| Course structure (8‑module outline)    | **Essentials_course_structure.md**                                            |
+| Learning gap, goal & objectives        | **\*\_Essentials_Learning_Design.md** (any prefix)                            |
+| Prompt‑module definitions              | **ai_prompt_modules_minimal.md**                                              |
+| Authoring instructions for content map | **2_Content_Map_Instructions_v3.md**                                          |
+| Target‑audience personas               | **Adobe_Sellers_Learner_Personas.md** and/or **Adobe_SC_Learner_Personas.md** |
 
-If any file above is missing or unreadable, invoke the **Halt & Report** rule.
-
----
-
-## 1  Global Instructions
-
-| Requirement     | Details                                                          |
-| --------------- | ---------------------------------------------------------------- |
-| **Language**    | Use British English throughout.                                  |
-| **Memory**      | Clear any previous cache/memory before execution.                |
-| **Tone**        | Clear, concise, instructional; calibrated to the target persona. |
-| **Bloom Focus** | *Remember* level (unless otherwise specified in objectives).     |
-| **Assessment**  | End‑of‑course quiz (plus module‑level checks as generated).      |
+If any file above is missing or unreadable, invoke **Halt & Report**.
 
 ---
 
-## 2  Pre‑Flight Validation
+## 1 Global Instructions
 
-1. **Required attachments** — all five files listed in Section 0 must be present **with the exact names shown**.  
-2. **Halt & Report** — if any file is missing or unreadable, output a **single bullet list** naming the unavailable items and **stop processing**.
-
----
-
-## 3  Core Data to Extract & Lock
-
-| Source                              | Must Be Used *Verbatim*                                                                       |
-| ----------------------------------- | --------------------------------------------------------------------------------------------- |
-| **Learning Gap, Goal & Objectives** | Insert exactly as written from *Marketo_Essentials_Learning_Design.md*.                       |
-| **8‑Module Course Structure**       | Extract from *Essentials_course_structure.md*.                                                |
-| **Target Audience / Persona**       | Derive role, needs, experience level and context from *Adobe_Sellers_Learner_Personas.md*.    |
+| Requirement     | Details                                                       |
+| --------------- | ------------------------------------------------------------- |
+| **Language**    | British English only.                                         |
+| **Memory**      | Clear all prior cache/memory before execution.                |
+| **Tone**        | Clear, concise, instructional; matched to the target persona. |
+| **Bloom Focus** | _Remember_ level (unless otherwise specified in objectives).  |
+| **Assessment**  | End‑of‑course quiz plus module‑level checks (auto‑generated). |
 
 ---
 
-## 4  AI Prompt Modules (Invoke as Needed)
+## 2 Pre‑Flight Validation
 
-- **Learning_Activity_Generator_Module** – creates both formative activities **and** summative assessments  
-- **Learning_Asset_Module** – asset types & formats  
-- **Pedagogy_Module** – validate objectives & scaffolding  
-- **Accessibility_Module** – WCAG, alt‑text, captions, inclusive design  
-- **Tone_of_Voice_Module** – keep persona‑appropriate tone  
-- **Visual_Style_Module** – clean, accessible, corporate look  
-- **Learning_Theories_Checklist_Module** *(optional)* – alignment (Bloom, Gagné, SOLO, etc.)  
-- **Cognitive_Keyword_Watchlist_Module** *(optional)* – highlight cognitive/emotional load cues  
-
-*The combined remit of the Learning_Activity_Generator_Module covers detailed assessment design, so a standalone **Assessment_Design_Module** is not required.*
+1. Confirm all files in **Section 0** are attached.
+   - Four must match **exactly**.
+   - One must satisfy the pattern `*_Essentials_Learning_Design.md`.
+2. If any file is missing/unreadable, output a bullet‑list of those items and **stop processing**.
 
 ---
 
-## 5  Execution Sequence
+## 3 Core Data to Extract & Lock
 
-1. **Validate attachments & mandatory fields** (Section 2).  
-2. **Expand topic‑intent statements** where required.  
-3. **Generate & validate** gaps, goals, objectives and outcomes (via *Learner_Outcomes_Module*).  
-4. **Map** extracted content to the eight modules.  
-5. **Align** every item to instructional‑theory tags (Bloom, Gagné, Kirkpatrick, ARCS).  
-5a. **Run Accessibility_Module** on all generated assets; halt if WCAG 2.2 AA criteria are not met.  
-6. **Generate activities/assessments** with *Learning_Activity_Generator_Module*:  
-   - **Summary** for Layer 1 table.  
-   - **Detail** for Layer 2 appendix (include outputs from *Differentiation_Scaffolding_Module*, *Accessibility_Module*, *Misconception_Check_Module*).  
-7. **Assemble/export** outputs as `.docx` per Section 6 standards *(accepts optional `module_id` parameter to regenerate a single module only)*.
+| Data                                   | Extraction rule                                                                                                                     |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Learning Gap, Goal & Objectives**    | Copy verbatim from _\_Essentials_Learning_Design.md_.                                                                               |
+| **8‑Module Course Structure**          | Extract from _Essentials_course_structure.md_.                                                                                      |
+| **Delivery Mode → `mode`**             | Parse the first heading/table cell matching \*\*`/Modality                                                                          | Delivery[ _-]?Mode | Delivery[ _-]?Type/i`**; if no match, default to `"self‑paced e‑learning"`. |
+| **Assessment Plan → `assessment`**     | Parse the first heading/cell matching \*\*`/Assessment                                                                              | Evaluation         | Quiz                                                                        | Test/i`**; if no match, default to `"end‑of‑course quiz"`. |
+| **Target Persona → `learner_profile`** | Locate the **first fenced block tagged `json learner_profile`; if absent, use the first JSON block found** in the persona MD files. |
 
----
-
-## 6  Output Specification
-
-### 6.1  Header (once per document)
-
-Course Title | Generation Date (timestamp) | Modality | Total Duration | Target Audience | Course Goal | High‑level Objectives
-
-### 6.2  Layer 1 — Content‑Map Table (see Appendix for column definitions)
-
-*A4 landscape, sans‑serif ≥ 11 pt, adequate margins, footer with timestamp & page numbers, module ref*
-
-| Module | Duration | Key Topics | Learning Objectives | Activities / Assessments (summary only) | Learning Outcomes | Instructional Alignment* |
-| ------ | -------- | ---------- | ------------------- | --------------------------------------- | ----------------- | ------------------------ |
-| …      | …        | …          | …                   | …                                       | …                 | Bloom / Gagné / Kirkpatrick / ARCS |
-
-*All entries **must** trace directly to the locked Learning Outcomes and be theory‑aligned.*
-
-### 6.3  Layer 2 — Appendix
-
-For each activity/assessment from Layer 1, provide:
-
-- **Detailed Activity Output** (full *Learning_Activity_Generator_Module* response)  
-- **Differentiation & Scaffolding** details  
-- **Accessibility** specifications  
-- **Misconception Checks** (include threshold concepts & high‑priority misconceptions for SME review)  
-- **Optional**: theory checklists, cognitive keyword watchlist highlights  
-
-*Do **not** remix module outputs unless explicitly SME‑approved.*
+All five locked items are immutable downstream.
 
 ---
 
-## 7  Export Standards
+## 4 AI Prompt Modules (available)
 
-- Deliver a single `.docx` containing **Layer 1** followed by **Layer 2**.  
-- Document properties: A4 landscape, sans‑serif font ≥ 11 pt, consistent heading styles, automatic table of contents.  
-- Footer on every page: generation timestamp · page X of Y · module reference code.
+| Module                                            | Primary role                                                                                                               |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Learner_Outcomes_Module**                       | Expand & validate gaps → goals → objectives → outcomes                                                                     |
+| **Learning_Activity_Generator_Module**            | Create formative activities **and** summative assessments (requires `objectives`, `assessment`, `mode`, `learner_profile`) |
+| **Learning_Asset_Module**                         | Recommend asset types & formats                                                                                            |
+| **Pedagogy_Module**                               | QA objectives & scaffold sequencing                                                                                        |
+| **Differentiation_Scaffolding_Module**            | Differentiation tiers & supports                                                                                           |
+| **Misconception_Check_Module**                    | Threshold concepts & misconceptions                                                                                        |
+| **Accessibility_Module**                          | WCAG 2.2 AA compliance                                                                                                     |
+| **Tone_of_Voice_Module**                          | Persona‑appropriate voice                                                                                                  |
+| **Visual_Style_Module**                           | Clean, accessible, corporate look                                                                                          |
+| _Optional_ **Learning_Theories_Checklist_Module** | Bloom, Gagné, SOLO alignment                                                                                               |
+| _Optional_ **Cognitive_Keyword_Watchlist_Module** | Cognitive/emotional load flags                                                                                             |
 
 ---
 
-## 8  Error Handling & Optimisation
+## 5 Execution Sequence
 
-- **Error Report** — if validation fails at any stage, output a single bullet list summarising all missing data or mismatches; do not proceed further.  
-- **Optimise runtime** by modularising validation checks, supporting the `module_id` partial‑rerun parameter and setting global export settings.
+| #     | Action                                     |
+| ----- | ------------------------------------------ |
+| **1** | **Run Pre‑Flight Validation** (Section 2). |
+| **2** | **Extract variables**: \                   |
+
+• `mode`, `assessment` via regex rules (Section 3) \  
+  • `learner_profile` via JSON extraction rule. |
+| **3** | **Generate & validate** gaps, goals, objectives & outcomes (_Learner_Outcomes_Module_). |
+| **4** | **Map** validated content to the eight modules. |
+| **5** | **Align** items to instructional‑theory tags (Bloom, Gagné, Kirkpatrick, ARCS). |
+| **6** | **Accessibility pre‑check** – run _Accessibility_Module_; halt if WCAG fails. |
+| **7** | **Generate activities & assessments** via _Learning_Activity_Generator_Module_, passing: `objectives, assessment, mode, learner_profile`. Then run: <br>• _Differentiation_Scaffolding_Module_ <br>• _Misconception_Check_Module_ <br>_(Tip: include `module_id` to produce or regenerate **one module at a time** for SME review and to conserve context.)_ |
+| **8** | **Accessibility final‑check** – rerun _Accessibility_Module_ on the complete draft; halt if WCAG fails. |
+| **9** | **Compliance Verification** – ensure structure, theory alignment, accessibility, tone & formatting are complete; halt if any element is missing. |
+| **10** | **Assemble/export** `.docx` per Section 7. **Default**: export **one module at a time** in sequence. Use `module_id="all"` to output the full document in a single run. |
 
 ---
 
-*End of prompt.*
+## 6 Output Specification
+
+### 6.1 Header (once per document)
+
+`Course Title | Generation Date | Modality | Duration | Target Audience | Course Goal | High‑level Objectives`
+
+### 6.2 Layer 1 — Content‑Map Table
+
+_A4 landscape, sans‑serif ≥ 11 pt, adequate margins, footer with timestamp & page numbers, module ref_
+
+| Column                       | Definition                              |
+| ---------------------------- | --------------------------------------- |
+| **Module**                   | Numerical/descriptive label             |
+| **Duration**                 | Seat‑time or effort                     |
+| **Key Topics**               | Primary subject areas                   |
+| **Learning Objectives**      | Behavioural objectives                  |
+| **Activities / Assessments** | One‑line descriptors                    |
+| **Learning Outcomes**        | Verbatim outcomes                       |
+| **Instructional Alignment**  | Bloom / Gagné / Kirkpatrick / ARCS tags |
+
+### 6.3 Layer 2 — Appendix
+
+For each activity/assessment in Layer 1 provide:
+
+- Detailed activity output (_Learning_Activity_Generator_Module_)
+- Differentiation & scaffolding details
+- Accessibility specifications
+- Misconception checks
+- _Optional_: learning‑theory checklist & cognitive keyword flags
+
+_No remixing of module outputs unless SME‑approved._
+
+---
+
+## 7 Export Standards
+
+- Single `.docx` containing Layer 1 followed by Layer 2 (or per‑module `.docx` when using `module_id`).
+- A4 landscape, sans‑serif ≥ 11 pt, consistent heading styles, auto TOC.
+- Footer every page: generation timestamp · page X of Y · module reference code.
+
+---
+
+## 8 Error Handling & Optimisation
+
+- **Error Report** – any validation/compliance failure → one bullet‑list; processing stops.
+- **Optimise runtime** – modular validation, supports `module_id` partial rerun.
+- **No placeholders** – if required data are missing, halt & report rather than outputting incomplete content.
+
+---
+
+_End of prompt._

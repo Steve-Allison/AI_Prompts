@@ -149,13 +149,13 @@ activities = ActivityGenerator()
 pedagogy = PedagogyModule()
 
 # Get inputs
-key_concepts = cog_keywords.analyze_content(topic="photosynthesis")
+key_concepts = cog_keywords.analyse_content(topic="photosynthesis")
 learning_activities = activities.generate_activities(learning_objectives)
 pedagogical_framework = pedagogy.get_framework(subject="biology")
 
 # Check for misconceptions
 misconception_checker = MisconceptionChecker()
-results = misconception_checker.analyze_misconceptions(
+results = misconception_checker.analyse_misconceptions(
     key_concepts=key_concepts,
     learning_activities=learning_activities,
     pedagogical_framework=pedagogical_framework
@@ -229,7 +229,7 @@ print(results)
 
 1. **Misconception Identification**
    - Review research on common misconceptions in the subject area
-   - Analyze student work and assessment data
+   - Analyse student work and assessment data
    - Consult with subject matter experts
    - Use `Cognitive_Keyword_Watchlist_Module` to identify potential trouble spots
 
@@ -369,7 +369,7 @@ print(results)
 
 - **`Learning_Activity_Generator_Module` Connections**:
   - Activity: "Correlation or Causation?" card sort
-  - Discussion: Analyze news headlines for causal claims
+  - Discussion: Analyse news headlines for causal claims
   - Project: Find and critique examples of misleading statistics in media
 
 #### 5. Assessment & Monitoring

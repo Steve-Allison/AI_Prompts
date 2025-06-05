@@ -71,7 +71,7 @@ Each section generates cue blocks with full metadata:
 ✅ STEP 4: Canvas-First Output
 • Script is written to canvas only
 • After script is rendered, user is prompted:
-"Please make any edits directly in the canvas. When you're done, type ‘Finalise it’ to trigger the final document export."
+"Please make any edits directly in the canvas. When you're done, type 'Finalise it' to trigger the final document export."
 
 📄 STEP 5: Final Document Output Format (Post-Approval)
 ✅ Document Style Settings

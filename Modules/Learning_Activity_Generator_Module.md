@@ -111,7 +111,7 @@ Generate, QA, and document fully scaffolded, accessible learning activities for 
 ### 3.8 Step 7: Continuous Feedback Loop
 
 - After the activity is delivered, prompt the instructor/facilitator to submit feedback (e.g., on learner engagement, outcomes, improvements).
-- Call **feedback_module** to log/analyze this input for continuous improvement and versioning.
+- Call **feedback_module** to log/analyse this input for continuous improvement and versioning.
 
 ### 3.9 Step 8: Export/Integration
 

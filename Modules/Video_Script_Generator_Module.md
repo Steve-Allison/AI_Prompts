@@ -75,7 +75,7 @@ Do not generate visuals in script body
 ✅ STEP 4: Canvas-Based Output Flow
 • Output the full draft script to canvas only
 • Then prompt the user:
-“Please edit the script directly in the canvas. When you’re ready, type ‘Finalise it’ to generate the export document.”
+“Please edit the script directly in the canvas. When you're ready, type 'Finalise it' to generate the export document.”
 
 ✅ STEP 5: Final Document Export (Triggered by User)
 

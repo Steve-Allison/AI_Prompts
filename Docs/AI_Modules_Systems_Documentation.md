@@ -15,7 +15,7 @@ This document provides a technical overview and systems-level reference for all 
 ### Core Principles
 
 1. **Modularity**: Each module serves a specific, well-defined purpose
-2. **Interoperability**: Standardized input/output schemas for seamless integration
+2. **Interoperability**: Standardised input/output schemas for seamless integration
 3. **Versioning**: Semantic versioning with clear dependency management
 4. **Documentation**: Comprehensive metadata and usage guidelines
 
@@ -50,7 +50,7 @@ include_module("Module_Name", config={"param1": value1, "param2": value2})
 
 | Module                        | Version | Dependencies                                         | Description                                            |
 | ----------------------------- | ------- | ---------------------------------------------------- | ------------------------------------------------------ |
-| `Cognitive_Keyword_Watchlist` | 1.0.0   | None                                                 | Identifies and analyzes key instructional concepts     |
+| `Cognitive_Keyword_Watchlist` | 1.0.0   | None                                                 | Identifies and analyses key instructional concepts     |
 | `Pedagogy_Module`             | 1.0.0   | None                                                 | Applies learning theories and instructional strategies |
 | `Learning_Activity_Generator` | 1.0.0   | `Cognitive_Keyword_Watchlist`                        | Creates engaging learning activities                   |
 | `Misconception_Check`         | 1.1.0   | `Cognitive_Keyword_Watchlist`                        | Identifies and addresses common misunderstandings      |
@@ -73,7 +73,7 @@ include_module("Module_Name", config={"param1": value1, "param2": value2})
 1. **Analysis Phase**
 
    ```python
-   concepts = include_module("Cognitive_Keyword_Watchlist").analyze(content)
+   concepts = include_module("Cognitive_Keyword_Watchlist").analyse(content)
    pedagogy = include_module("Pedagogy_Module").apply_theories(concepts)
    ```
 
@@ -97,7 +97,7 @@ include_module("Module_Name", config={"param1": value1, "param2": value2})
 ### Module Communication
 
 - **Input/Output**: All modules use JSON Schema for data exchange
-- **Error Handling**: Standardized error codes and exception handling
+- **Error Handling**: Standardised error codes and exception handling
 - **Logging**: Consistent logging format with severity levels
 
 ### Configuration Management
@@ -135,7 +135,7 @@ include_module("Module_Name", config={"param1": value1, "param2": value2})
 ### Performance Metrics
 
 - Execution time per module
-- Resource utilization
+- **Resource utilisation**
 - Error rates and types
 - Cache hit/miss ratios
 

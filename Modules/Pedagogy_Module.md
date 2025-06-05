@@ -99,7 +99,7 @@ Matrix mapping learning objectives to:
 
 - Checklist of five:
 
-  - Task-centered learning
+  - Task-centred learning
   - Activation of prior knowledge
   - Demonstration of new knowledge
   - Application through active use

@@ -87,7 +87,7 @@ The Differentiation_Scaffolding_Module ensures all lesson content, activities, a
 ### Student Resources
 - **Type**: Array of objects
 - **Properties**:
-  - resource_type: string (e.g., 'worksheet', 'graphic_organizer', 'checklist')
+  - resource_type: string (e.g., 'worksheet', 'graphic_organiser', 'checklist')
   - title: string
   - content: string (HTML or markdown)
   - accessibility_features: Array of strings
@@ -128,7 +128,7 @@ The Differentiation_Scaffolding_Module ensures all lesson content, activities, a
 
 - **`Learning_Asset_Module`**
   - Packages final differentiated materials
-  - Organizes resources for instructor and student use
+  - Organises resources for instructor and student use
   - Ensures consistent formatting across materials
 
 ## Usage Example
@@ -149,7 +149,7 @@ misconceptions = MisconceptionChecker()
 
 # Get inputs
 learning_objectives = pedagogy.get_learning_objectives(topic="fractions")
-key_concepts = cog_keywords.analyze_content(topic="fractions")
+key_concepts = cog_keywords.analyse_content(topic="fractions")
 base_activities = activities.generate_activities(learning_objectives)
 common_misconceptions = misconceptions.identify_misconceptions(topic="fractions")
 
@@ -191,7 +191,7 @@ print(differentiated_content)
   },
   "accessibility": {
     "alt_text_required": true,
-    "color_contrast_check": true,
+    "colour_contrast_check": true,
     "keyboard_navigable": true
   },
   "output_formats": ["pdf", "docx", "html"],
