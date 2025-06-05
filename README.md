@@ -1,4 +1,4 @@
-# 📚 AI Instructional Modules Registry
+# 🧠 AI Instructional Module Registry
 
 Welcome to the **AI Instructional Modules Registry** — a modular, callable, version-controlled system designed to support AI-driven instructional design, media scripting, accessibility validation, and content enrichment.
 
@@ -6,15 +6,7 @@ Welcome to the **AI Instructional Modules Registry** — a modular, callable, ve
 
 ## 🎯 Project Purpose
 
-This repository provides a centralised, shared registry of AI modules used to orchestrate the generation, enrichment, validation, and layout of multimedia learning experiences.
-
-Each module follows a consistent design pattern and is registered using:
-
-```python
-include_module("<Module_Name>")
-```
-
-The system is intended to support prompt-based AI tools, controller agents, learning experience designers, and development teams building intelligent content generation workflows.
+This registry defines a modular system of callable AI components for learning design, content generation, accessibility QA, and media scripting. Modules are registered in Markdown and callable via prompt-based tools or orchestration controllers using a consistent interface.
 
 ---
 
@@ -24,23 +16,31 @@ The system is intended to support prompt-based AI tools, controller agents, lear
 
 Modules are designed to work together in the following sequence:
 
-1. **Foundation Modules** (run first):
+1. **Foundation Layer** (run first):
 
    - `Cognitive_Keyword_Watchlist_Module` - Identifies key concepts and terms
    - `Pedagogy_Module` - Applies learning theories
    - `Tone_of_Voice_Module` - Sets communication style
 
-2. **Content Development Modules** (run second):
+2. **Content Layer** (run second):
 
    - `Learning_Activity_Generator_Module` - Creates core activities
    - `Differentiation_Scaffolding_Module` - Adds support and challenge layers
    - `Misconception_Check_Module` - Identifies and addresses learning barriers
    - `Theory_Enhancement_Library` - Adds academic depth
 
-3. **Presentation & Delivery** (run third):
+3. **Presentation Layer** (run third):
    - `Visual_Style_Module` - Applies visual design
    - `Accessibility_Module` - Ensures inclusivity
    - `Learning_Asset_Module` - Structures final outputs
+
+Modules are callable using a uniform invocation pattern:
+
+```python
+include_module("<Module_Name>")
+```
+
+#### 🧱 Module Categories
 
 ### Module Reference
 
@@ -70,6 +70,8 @@ Modules are designed to work together in the following sequence:
 - **Pedagogical Alignment**: Ensuring teaching methods match learning objectives and theories.
 - **Inclusive Design**: Creating content that is accessible to all learners, regardless of ability or background.
 
+*Note: These terms are aligned with the cognitive and pedagogical definitions embedded in the `Cognitive_Keyword_Watchlist_Module` and `Pedagogy_Module`.*
+
 ---
 
 ## 🔁 Orchestration & Usage
@@ -80,7 +82,7 @@ Modules are designed to be composable in prompt workflows using:
 include_module("Module_Name")
 ```
 
-A full orchestration example might involve:
+A typical multi-module orchestration stack may include:
 
 ```python
 include_module("Video_Script_Generator_Module")
@@ -121,11 +123,11 @@ Each module is stored as a versioned Markdown specification with the following:
 To add a new module, submit a markdown spec following the existing format with:
 
 - A unique name
-- A version number
+- A version number (semantic: MAJOR.MINOR.PATCH)
 - A clear primary function and return schema
 
 ---
 
 ## 📄 Licence
 
-This project is open for educational, non-commercial modular use. Contact the maintainer for integration or custom orchestration support.
+This project is licensed for educational, non-commercial use under modular AI registry terms.

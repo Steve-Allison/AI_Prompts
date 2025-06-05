@@ -1,6 +1,6 @@
 # Unified Content‑Map Generation & Analysis Prompt
 
-_(version 3 – incorporates regex fallbacks, resilient JSON extraction, and per‑module default export)_
+_(version - 3 – incorporates regex fallbacks, resilient JSON extraction, and per‑module default export)_
 
 ---
 
@@ -21,7 +21,7 @@ Placeholder or partial outputs are **forbidden**.
 | Course structure (8‑module outline)    | **Essentials_course_structure.md**                                            |
 | Learning gap, goal & objectives        | **\*\_Essentials_Learning_Design.md** (any prefix)                            |
 | Prompt‑module definitions              | **ai_prompt_modules_minimal.md**                                              |
-| Authoring instructions for content map | **2_Content_Map_Instructions_v3.md**                                          |
+| Authoring instructions for content map | **\*\_Content_Map_Instructions_v3.md**                                          |
 | Target‑audience personas               | **Adobe_Sellers_Learner_Personas.md** and/or **Adobe_SC_Learner_Personas.md** |
 
 If any file above is missing or unreadable, invoke **Halt & Report**.
