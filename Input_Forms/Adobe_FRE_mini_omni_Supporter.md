@@ -502,19 +502,6 @@ print(results)
 - AI-based analysis may require additional processing resources
 - Large concept inventories may need to be processed in batches
 
-## Version History
-
-| Version | Date       | Description of Changes                    |
-| ------- | ---------- | ----------------------------------------- |
-| 1.1.0   | 2025-06-03 | Enhanced diagnostic tools and integration |
-| 1.0.0   | 2025-05-15 | Initial release                           |
-
-## Related Resources
-
-- [Common Misconceptions Database](https://example.com/misconceptions-db)
-- [Conceptual Change Strategies Guide](https://example.com/conceptual-change)
-- [Diagnostic Assessment Toolkit](https://example.com/diagnostic-tools)
-
 ## Implementation Workflow
 
 1. **Misconception Identification**
@@ -867,23 +854,20 @@ Big-picture aim that addresses the gap and links to business needs.
 
 - Analogy: Vision
 
-**Example:**  
-Equip support agents to improve satisfaction from 70% → 85% within 3 months.
+**Example:** Equip support agents to improve satisfaction from 70% to 85% in 3 months.
 
 ### Learning Objective – In-course performance
 
-What learners will do by the end of training.
+What learners will achieve by end of training:
+- Follow ABCD (Audience, Behaviour, Condition, Degree)
+- Be SMART (Specific, Measurable, Achievable, Relevant, Time-bound)
+- Align with goal/assessment
 
-- Must follow ABCD (Audience, Behaviour, Condition, Degree)
-- Must be SMART (Specific, Measurable, Achievable, Relevant, Time-bound)
-- Align with goal and assessment
-
-**Example:**  
-Given realistic scenarios (Condition), agents (Audience) will troubleshoot effectively (Behaviour) in 90% of simulations (Degree).
+**Example:** Given scenarios, agents will troubleshoot effectively in 90% of simulations.
 
 ### Learning Outcome – Post-course impact
 
-Real-world improvement measured after training.
+Measured real-world improvement after training.
 
 - Must include: action, KPI, data source, timeframe
 
