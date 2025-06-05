@@ -7,6 +7,21 @@ Course parameters:
 – Use the exact sequence of modules/topics from the outline.  
 – Read the provided Learning Outcomes for each module and ensure your content fully covers what learners need to achieve them—but do not restate the outcomes.
 
+## ⚠️ Execution Directive  
+All instructions in this prompt are **mandatory**. Do **not** skip, approximate or substitute any step.  
+If a requirement is unmet, **halt immediately** and output a single bullet‑list error report.  
+Placeholder or partial outputs are **forbidden**.
+
+---
+
+## 0 Source Materials (OneDrive, read‑only)  
+
+You MUST iterate through **every file contained in `SOURCE_FOLDER`** (including sub‑folders), extract all machine‑readable text, and store that text for downstream analysis. No content may be discarded unless it is an exact duplicate of another file.
+
+All files in the linked folder must be read and analysed for relevant content, unless a specific file requirement or exclusion is stated below. Use all available information from these files to inform the outputs of this prompt:
+
+`https://adobe-my.sharepoint.com/:f:/p/sallison/EqVn3P8pbLZCsEiPMzojt_UBjdgSJ32e8W1TJ8nTRkQP8g`
+
 **For each module/topic, call and integrate the relevant modules by name from the Modules folder as appropriate to enrich your content.**
 
 - For tone and delivery, use `Tone_of_Voice_Module`.
