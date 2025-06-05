@@ -1,4 +1,4 @@
-# Unified Content‑Map Generation & Analysis Prompt
+# Unified_Content‑Map_Generation_&_Analysis_Prompt
 
 _(version - 3 – incorporates regex fallbacks, resilient JSON extraction, and per‑module default export)_
 
@@ -24,7 +24,7 @@ Placeholder or partial outputs are **forbidden**.
 | Authoring instructions for content map | **\*\_Content_Map_Instructions_v3.md**                                          |
 | Target‑audience personas               | **Adobe_Sellers_Learner_Personas.md** and/or **Adobe_SC_Learner_Personas.md** |
 
-If any file above is missing or unreadable, invoke **Halt & Report**.
+If any file above is missing or unreadable, invoke **Halt & Report**.
 
 ---
 
@@ -42,7 +42,7 @@ If any file above is missing or unreadable, invoke **Halt & Report**.
 
 ## 2 Pre‑Flight Validation
 
-1. Confirm all files in **Section 0** are attached.
+1. Confirm all files in **Section 0** are attached.
    - Four must match **exactly**.
    - One must satisfy the pattern `*_Essentials_Learning_Design.md`.
 2. If any file is missing/unreadable, output a bullet‑list of those items and **stop processing**.
@@ -55,9 +55,9 @@ If any file above is missing or unreadable, invoke **Halt & Report**.
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | **Learning Gap, Goal & Objectives**    | Copy verbatim from _\_Essentials_Learning_Design.md_.                                                                               |
 | **8‑Module Course Structure**          | Extract from _Essentials_course_structure.md_.                                                                                      |
-| **Delivery Mode → `mode`**             | Parse the first heading/table cell matching \*\*`/Modality                                                                          | Delivery[ _-]?Mode | Delivery[ _-]?Type/i`**; if no match, default to `"self‑paced e‑learning"`. |
-| **Assessment Plan → `assessment`**     | Parse the first heading/cell matching \*\*`/Assessment                                                                              | Evaluation         | Quiz                                                                        | Test/i`**; if no match, default to `"end‑of‑course quiz"`. |
-| **Target Persona → `learner_profile`** | Locate the **first fenced block tagged `json learner_profile`; if absent, use the first JSON block found** in the persona MD files. |
+| **Delivery Mode → `mode`**             | Parse the first heading/table cell matching \*\*`/Modality                                                                          | Delivery[ _-]?Mode | Delivery[ _-]?Type/i`**; if no match, default to `"self‑paced e‑learning"`. |
+| **Assessment Plan → `assessment`**     | Parse the first heading/cell matching \*\*`/Assessment                                                                              | Evaluation         | Quiz                                                                        | Test/i`**; if no match, default to `"end‑of‑course quiz"`. |
+| **Target Persona → `learner_profile`** | Locate the **first fenced block tagged `json learner_profile`; if absent, use the first JSON block found** in the persona MD files. |
 
 All five locked items are immutable downstream.
 
@@ -73,7 +73,7 @@ All five locked items are immutable downstream.
 | **Pedagogy_Module**                               | QA objectives & scaffold sequencing                                                                                        |
 | **Differentiation_Scaffolding_Module**            | Differentiation tiers & supports                                                                                           |
 | **Misconception_Check_Module**                    | Threshold concepts & misconceptions                                                                                        |
-| **Accessibility_Module**                          | WCAG 2.2 AA compliance                                                                                                     |
+| **Accessibility_Module**                          | WCAG 2.2 AA compliance                                                                                                     |
 | **Tone_of_Voice_Module**                          | Persona‑appropriate voice                                                                                                  |
 | **Visual_Style_Module**                           | Clean, accessible, corporate look                                                                                          |
 | _Optional_ **Learning_Theories_Checklist_Module** | Bloom, Gagné, SOLO alignment                                                                                               |
@@ -85,10 +85,10 @@ All five locked items are immutable downstream.
 
 | #     | Action                                     |
 | ----- | ------------------------------------------ |
-| **1** | **Run Pre‑Flight Validation** (Section 2). |
+| **1** | **Run Pre‑Flight Validation** (Section 2). |
 | **2** | **Extract variables**: \                   |
 
-• `mode`, `assessment` via regex rules (Section 3) \  
+• `mode`, `assessment` via regex rules (Section 3) \  
   • `learner_profile` via JSON extraction rule. |
 | **3** | **Generate & validate** gaps, goals, objectives & outcomes (_Learner_Outcomes_Module_). |
 | **4** | **Map** validated content to the eight modules. |
@@ -97,19 +97,31 @@ All five locked items are immutable downstream.
 | **7** | **Generate activities & assessments** via _Learning_Activity_Generator_Module_, passing: `objectives, assessment, mode, learner_profile`. Then run: <br>• _Differentiation_Scaffolding_Module_ <br>• _Misconception_Check_Module_ <br>_(Tip: include `module_id` to produce or regenerate **one module at a time** for SME review and to conserve context.)_ |
 | **8** | **Accessibility final‑check** – rerun _Accessibility_Module_ on the complete draft; halt if WCAG fails. |
 | **9** | **Compliance Verification** – ensure structure, theory alignment, accessibility, tone & formatting are complete; halt if any element is missing. |
-| **10** | **Assemble/export** `.docx` per Section 7. **Default**: export **one module at a time** in sequence. Use `module_id="all"` to output the full document in a single run. |
+| **10** | **Assemble/export** `.docx` per Section 7. **Default**: export **one module at a time** in sequence. Use `module_id="all"` to output the full document in a single run. |
 
 ---
 
 ## 6 Output Specification
 
-### 6.1 Header (once per document)
+### 6.1 Document Header (populated from input documents)
 
-`Course Title | Generation Date | Modality | Duration | Target Audience | Course Goal | High‑level Objectives`
+**Course Title:** [populated from learning design input]  
+**Generation Date:** [auto-generated timestamp]  
+**Modality:** [populated from delivery mode extraction]  
+**Duration:** [populated from course structure input]  
+**Target Audience:** [populated from learner persona input]  
+**Course Goal:** [populated from learning design input]  
+**High-level Objectives:** [populated from learning design input]
 
-### 6.2 Layer 1 — Content‑Map Table
+### 6.2 Layer 1 — Content‑Map Table
 
-_A4 landscape, sans‑serif ≥ 11 pt, adequate margins, footer with timestamp & page numbers, module ref_
+**Mandatory Formatting Requirements:**
+- **Page Size:** A4
+- **Orientation:** Landscape  
+- **Margins:** 1cm all around
+- **Font:** Sans-serif, 11pt
+- **Header:** Content Map title
+- **Footer:** Timestamp and module reference
 
 | Column                       | Definition                              |
 | ---------------------------- | --------------------------------------- |
@@ -121,9 +133,9 @@ _A4 landscape, sans‑serif ≥ 11 pt, adequate margins, footer with timestam
 | **Learning Outcomes**        | Verbatim outcomes                       |
 | **Instructional Alignment**  | Bloom / Gagné / Kirkpatrick / ARCS tags |
 
-### 6.3 Layer 2 — Appendix
+### 6.3 Layer 2 — Appendix
 
-For each activity/assessment in Layer 1 provide:
+For each activity/assessment in Layer 1 provide:
 
 - Detailed activity output (_Learning_Activity_Generator_Module_)
 - Differentiation & scaffolding details
@@ -137,9 +149,9 @@ _No remixing of module outputs unless SME‑approved._
 
 ## 7 Export Standards
 
-- Single `.docx` containing Layer 1 followed by Layer 2 (or per‑module `.docx` when using `module_id`).
-- A4 landscape, sans‑serif ≥ 11 pt, consistent heading styles, auto TOC.
-- Footer every page: generation timestamp · page X of Y · module reference code.
+- Single `.docx` containing Layer 1 followed by Layer 2 (or per‑module `.docx` when using `module_id`).
+- A4 landscape, sans‑serif ≥ 11 pt, consistent heading styles, auto TOC.
+- Footer every page: generation timestamp · page X of Y · module reference code.
 
 ---
 
