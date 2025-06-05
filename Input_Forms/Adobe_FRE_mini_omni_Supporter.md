@@ -1,4 +1,4 @@
-# AI Prompt Modules: Minimal Set
+# Adobe_FRE_mini_omni_Supporter
 
 ---
 
@@ -19,7 +19,7 @@
 ## Visual_Style_Module
 
 - Enforces visual identity, accessibility, instructional cues, brand/tone, metadata.
-- All visual decisions must align to a registered Visual_Style_Profile_* module.
+- All visual decisions must align to a registered Visual*Style_Profile*\* module.
 - Inputs: selected style, branding, accessibility, reviewer notes.
 - Outputs:
   - Visual Style Profile (fields: name, aesthetic, palette, typography, layout, icons, illustration, image, character, tone, consistency check, animation/motion, responsive, alignment tags, cue tags, metadata overlay, interaction type, visual_style_id)
@@ -47,11 +47,11 @@
 - Guides video generation/analysis: script, objectives, style, cues, markers.
 - Inputs: video title, goal, objectives, script, visual style, delivery markers.
 - Embedded sub-modules: Visual Style Compliance, Cognitive Cue Integration, Visual Learning Principles, Visual Style Alignment, Staging, Asset Cue Detection, Accessibility Annotations, Character Staging.
-- Output (per script section):  
-  - Primary/Second Camera Framing  
-  - Shot Transitions/Rhythm  
-  - Background  
-  - Graphics/Text  
+- Output (per script section):
+  - Primary/Second Camera Framing
+  - Shot Transitions/Rhythm
+  - Background
+  - Graphics/Text
   - Delivery Notes
 
 ---
@@ -60,13 +60,13 @@
 
 - Creates multimedia learning assets: aligned to objectives, pedagogy, accessible, consistent.
 - Inputs: objectives, script content (required); others optional (storyboard, wireframe, style, pedagogy, cognitive watchlist, tags, delivery, tone, accessibility, feedback).
-- Rules:  
-  - Validate required inputs.  
-  - Integrate storyboard/wireframe.  
-  - Recommend format & rationale.  
-  - Strictly apply Visual_Style_Module if present, else minimalist default.  
-  - Prioritise pedagogy_module if present, else default.  
-  - Asset plan: type, purpose, description, layout, export instructions.  
+- Rules:
+  - Validate required inputs.
+  - Integrate storyboard/wireframe.
+  - Recommend format & rationale.
+  - Strictly apply Visual_Style_Module if present, else minimalist default.
+  - Prioritise pedagogy_module if present, else default.
+  - Asset plan: type, purpose, description, layout, export instructions.
   - Cognitive highlighting: treat keywords by type, load, clarity.
   - Intent tags drive format/layout.
   - If multiple suitable formats: propose primary + alternative.
@@ -79,12 +79,12 @@
 
 - Defines narration/delivery: tone, pacing, gesture, speech rate, audience connection.
 - Inputs: presenter persona, optional override.
-- Outputs:  
-  - Tone profile  
-  - Delivery markers (pause, gesture, etc.)  
-  - Rules for narration (language, inclusivity, pace, patterns, rate)  
-  - Cadence, rhetorical, performance cues  
-  - Quantitative prosody/speech targets  
+- Outputs:
+  - Tone profile
+  - Delivery markers (pause, gesture, etc.)
+  - Rules for narration (language, inclusivity, pace, patterns, rate)
+  - Cadence, rhetorical, performance cues
+  - Quantitative prosody/speech targets
 - Accessibility: captioning notes, audio alternatives for gestures.
 - QA: Check speech rate, pause, gesture timing, phrase fidelity.
 - Downstream: enforce tone/rhythm for scripts & QA.
@@ -95,9 +95,9 @@
 
 - QA/review for instructional output: align with learning science (Bloom, Gagné, SOLO, Mayer, Kirkpatrick, ARCS, Merrill).
 - Inputs: outline, objectives, script, cues, accessibility alerts, reviewer notes.
-- Outputs:  
-  - QA Table (segment-by-segment, mapped to theory & accessibility)  
-  - Summary (matrix, flags, checklist, compliance report, remediation log)  
+- Outputs:
+  - QA Table (segment-by-segment, mapped to theory & accessibility)
+  - Summary (matrix, flags, checklist, compliance report, remediation log)
   - Appendix (index, change log, reviewer checklist, advanced theory QA option)
 - Rules: map segments to theory; accessibility must pass; remediation tags for issues.
 - Reviewer: edit comments, timestamp, version; auto log changes.
@@ -129,9 +129,9 @@
 
 - Validates learning objectives, scripts, activities, assets for outcomes, scaffolding, framework alignment, accessibility, traceability.
 - Inputs: objectives (required), script, outline, activities, assessments, cues, notes.
-- Outputs:  
-  - Validation table (objectives/segments mapped to pedagogy, QA fields, remediation)  
-  - Remediation suggestions  
+- Outputs:
+  - Validation table (objectives/segments mapped to pedagogy, QA fields, remediation)
+  - Remediation suggestions
   - Traceability appendix
 - Rules: objective integrity, mapping to theory, accessibility, alignment, scaffolding, dialogic teaching.
 - Error: halt if objectives missing; auto-suggest revision if failed validation.
@@ -152,9 +152,9 @@
 
 - Produces instructional video scripts/assets: concise, engaging, optimised.
 - Inputs: video metadata, objectives, structure, segmented content, scaffolding, cues, narration, accessibility, engagement, QA.
-- Structure:  
-  - Hook, goal, tone, presence, segmented content  
-  - Visual/audio/gesture cues  
+- Structure:
+  - Hook, goal, tone, presence, segmented content
+  - Visual/audio/gesture cues
   - Reflection, signalling, rhetorical devices, narration, accessibility
 - Prompts: enforce modular structure, conversational tone, clear visuals, tags for cues/gestures, theory alignment, QA checklist.
 
@@ -164,7 +164,7 @@
 
 - Detects/tags instructional, cognitive, emotional, rhetorical cues; assesses delivery fidelity, maps competencies, estimates cognitive load, generates formative Qs.
 - Inputs: script, outline (preferred), objectives (optional), taxonomy, persona, tone, prosody, analytics, language, version, feedback, detection, analysis mode.
-- Outputs:  
+- Outputs:
   - JSON-LD envelope with all tables: cues, metadata, cognitive cards, overlays, questions, analytics, feedback, logs.
 - Errors: missing script (halt), tone/gesture mismatch (flag), long segment (split).
 
@@ -194,18 +194,17 @@
 
 - Applies WCAG compliance, visual guidelines.
 - Inputs: content, WCAG level.
-- Returns:  
-  - Accessibility flags (with severity)  
-  - Alt text recommendation  
-  - Contrast guidance  
-  - Caption style  
+- Returns:
+  - Accessibility flags (with severity)
+  - Alt text recommendation
+  - Contrast guidance
+  - Caption style
   - Reading level assessment
 - Enhancements: automated validation tools, reference guidelines, standardised outputs, resource links.
 - Interactive activities: provide keyboard/text alternatives.
 - Flag modality mismatch, integrate early.
 
 ---
-
 
 ## Visual_Style_Profile_Adobe
 
@@ -277,6 +276,7 @@
 # Misconception_Check_Module
 
 ## Metadata
+
 - **Version**: 1.1.0
 - **Last Updated**: 2025-06-03
 - **Dependencies**:
@@ -289,12 +289,15 @@
   - `Accessibility_Module`
 
 ## Purpose
+
 The `Misconception_Check_Module` systematically identifies, annotates, and addresses common misconceptions, errors, and "traps" related to each key concept in the lesson. It provides research-based corrective explanations, targeted feedback prompts, and suggests instructional strategies to help learners overcome misunderstandings.
 
 ## Inputs
 
 ### Required:
+
 - **Key Concepts** from `Cognitive_Keyword_Watchlist_Module`
+
   - Type: Object
   - Properties:
     - key_terms: Array of {term: string, definition: string, complexity: number}
@@ -302,6 +305,7 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
     - prior_knowledge: Array of {concept: string, importance: string}
 
 - **Learning Activities** from `Learning_Activity_Generator_Module`
+
   - Type: Array of objects
   - Properties:
     - activity_id: string
@@ -317,6 +321,7 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
     - conceptual_frameworks: Array of {framework: string, components: Array<string>}
 
 ### Optional:
+
 - **Student Work Samples**
   - Type: Array of objects
   - Properties:
@@ -327,46 +332,49 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
 ## Outputs
 
 ### Misconception Profiles
+
 - **Type**: Array of objects
 - **Properties**:
   - concept: string
   - common_misconceptions: Array of {
-      description: string,
-      why_it_occurs: string,
-      diagnostic_question: string,
-      research_basis: string
+    description: string,
+    why_it_occurs: string,
+    diagnostic_question: string,
+    research_basis: string
     }
   - corrective_strategies: Array of {
-      strategy: string,
-      implementation: string,
-      resources_needed: Array<string>
+    strategy: string,
+    implementation: string,
+    resources_needed: Array<string>
     }
   - formative_assessments: Array of {
-      type: string,
-      prompt: string,
-      success_criteria: Array<string>
+    type: string,
+    prompt: string,
+    success_criteria: Array<string>
     }
 
 ### Diagnostic Tools
+
 - **Type**: Object
 - **Properties**:
   - diagnostic_questions: Array of {
-      question: string,
-      distractors: Array<{option: string, feedback: string}>,
-      correct_answer: string,
-      explanation: string
+    question: string,
+    distractors: Array<{option: string, feedback: string}>,
+    correct_answer: string,
+    explanation: string
     }
   - concept_inventories: Array<{
-      concept: string,
-      items: Array<{question: string, options: Array<string>}>
+    concept: string,
+    items: Array<{question: string, options: Array<string>}>
     }>
   - interview_protocols: Array<{
-      purpose: string,
-      questions: Array<string>,
-      analysis_rubric: Object
+    purpose: string,
+    questions: Array<string>,
+    analysis_rubric: Object
     }>
 
 ### Corrective Strategies
+
 - **Type**: Array of objects
 - **Properties**:
   - strategy_name: string
@@ -379,12 +387,15 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
 ## Integration Points
 
 ### Pre-requisite Modules:
+
 - **`Cognitive_Keyword_Watchlist_Module`**
+
   - Identifies key terms and concepts that commonly cause confusion
   - Provides cognitive complexity ratings for different concepts
   - Highlights prior knowledge requirements that may lead to misconceptions
 
 - **`Learning_Activity_Generator_Module`**
+
   - Supplies activities that might reveal misconceptions
   - Provides assessment items that could surface misunderstandings
   - Offers student work samples for analysis
@@ -395,12 +406,15 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
   - Suggests evidence-based strategies for conceptual change
 
 ### Dependent Modules:
+
 - **`Differentiation_Scaffolding_Module`**
+
   - Receives common misconceptions to address in scaffolds
   - Uses diagnostic tools for formative assessment
   - Implements corrective strategies in learning activities
 
 - **`Learning_Theories_Checklist_Module`**
+
   - Validates pedagogical approaches against known misconceptions
   - Ensures alignment with evidence-based practices
   - Provides theoretical grounding for intervention strategies
@@ -473,8 +487,8 @@ print(results)
 - **ERR_MISCONCEPTION_001**: Invalid concept input
   - **Cause**: Missing or malformed concept data
   - **Solution**: Verify concept input structure matches expected format
-  
 - **ERR_MISCONCEPTION_002**: Missing pedagogical framework
+
   - **Cause**: No learning theories or strategies provided
   - **Solution**: Ensure Pedagogy_Module is properly initialized and provides necessary data
 
@@ -490,10 +504,10 @@ print(results)
 
 ## Version History
 
-| Version | Date       | Description of Changes                |
-|---------|------------|--------------------------------------|
+| Version | Date       | Description of Changes                    |
+| ------- | ---------- | ----------------------------------------- |
 | 1.1.0   | 2025-06-03 | Enhanced diagnostic tools and integration |
-| 1.0.0   | 2025-05-15 | Initial release                       |
+| 1.0.0   | 2025-05-15 | Initial release                           |
 
 ## Related Resources
 
@@ -504,22 +518,26 @@ print(results)
 ## Implementation Workflow
 
 1. **Misconception Identification**
+
    - Review research on common misconceptions in the subject area
    - Analyse student work and assessment data
    - Consult with subject matter experts
    - Use `Cognitive_Keyword_Watchlist_Module` to identify potential trouble spots
 
 2. **Documentation**
+
    - Document each misconception clearly and specifically
    - Note the root causes of the misconception
    - Identify any patterns or related misconceptions
 
 3. **Correction Development**
+
    - Develop research-based explanations to correct the misconception
    - Create analogies or models that help restructure understanding
    - Design activities that help students confront and resolve the misconception
 
 4. **Integration**
+
    - Embed misconception checks throughout the learning sequence
    - Connect with `Differentiation_Scaffolding_Module` for targeted support
    - Align with `Learning_Activity_Generator_Module` for practice opportunities
@@ -536,6 +554,7 @@ print(results)
 ### Concept: [Concept Name]
 
 #### 1. Misconception Profile
+
 - **Description**: Clear statement of the misconception
 - **Prevalence**: How common this misconception is among learners
 - **Root Causes**: Why this misconception develops
@@ -543,24 +562,29 @@ print(results)
 - **Research Base**: Summary of relevant educational research
 
 #### 2. Diagnostic Tools
+
 - **Formative Questions**: Questions to surface the misconception
 - **Common Errors**: Typical mistakes that indicate this misunderstanding
 - **Assessment Items**: Sample test questions that reveal the misconception
 - **Classroom Activities**: Brief activities to diagnose understanding
 
 #### 3. Correction Strategies
+
 - **Direct Instruction**: Clear, explicit explanations
 - **Analogies & Models**: Helpful comparisons and representations
 - **Cognitive Conflict**: Activities that create cognitive dissonance
 - **Metacognitive Prompts**: Questions that prompt reflection on thinking
 
 #### 4. Integration with Other Modules
+
 - **`Cognitive_Keyword_Watchlist_Module` Connections**:
+
   - Key terms to emphasize
   - Related concepts to reinforce
   - Prerequisite knowledge to review
 
 - **`Differentiation_Scaffolding_Module` Connections**:
+
   - Support strategies for struggling learners
   - Extension activities for advanced students
   - Grouping suggestions
@@ -571,6 +595,7 @@ print(results)
   - Discussion prompts
 
 #### 5. Assessment & Monitoring
+
 - **Success Indicators**: How to know the misconception is resolved
 - **Follow-up Activities**: For reinforcement and application
 - **Common Pitfalls**: What to watch for during instruction
@@ -583,9 +608,10 @@ print(results)
 ### Concept: "Correlation vs. Causation"
 
 #### 1. Misconception Profile
-- **Description**: 
+
+- **Description**:
   Students believe that when two variables are correlated, one must cause the other.
-- **Prevalence**: 
+- **Prevalence**:
   Very common across all age groups and education levels.
 - **Root Causes**:
   - Everyday language often conflates correlation and causation
@@ -597,11 +623,14 @@ print(results)
   - Addressed in Common Core and state standards
 
 #### 2. Diagnostic Tools
+
 - **Formative Questions**:
+
   - "If two things happen together, does that mean one causes the other? Why or why not?"
   - "Can you think of two things that happen at the same time but aren't causally related?"
 
 - **Common Errors**:
+
   - Assuming A causes B without considering other explanations
   - Ignoring the possibility of a third variable
   - Confusing temporal sequence with causation
@@ -612,17 +641,21 @@ print(results)
   - Data interpretation tasks requiring identification of possible third variables
 
 #### 3. Correction Strategies
+
 - **Direct Instruction**:
+
   - Clearly define and distinguish between correlation and causation
   - Present the "third variable problem" and "directionality problem"
   - Use the phrase "correlation does not imply causation" and explain why
 
 - **Analogies & Models**:
+
   - "Ice cream and drowning" example (both increase in summer)
   - "Shoe size and reading level" in elementary students
   - Interactive simulations showing spurious correlations
 
 - **Cognitive Conflict**:
+
   - Present surprising examples that challenge assumptions
   - Have students generate their own examples
   - Show how the same correlation could support opposite causal claims
@@ -633,12 +666,15 @@ print(results)
   - "What evidence would convince you that A causes B?"
 
 #### 4. Integration with Other Modules
+
 - **`Cognitive_Keyword_Watchlist_Module` Connections**:
+
   - Key terms: "correlation", "causation", "confounding variable", "spurious"
   - Related concepts: experimental design, variables, controls
   - Prerequisites: understanding of variables, basic graphing
 
 - **`Differentiation_Scaffolding_Module` Connections**:
+
   - Support: Provide structured templates for analyzing relationships
   - Extension: Have students research and present real-world examples
   - Assessment: Create a "myth-busting" project about common causal fallacies
@@ -649,13 +685,16 @@ print(results)
   - Project: Find and critique examples of misleading statistics in media
 
 #### 5. Assessment & Monitoring
+
 - **Success Indicators**:
+
   - Can generate multiple explanations for a correlation
   - Identifies potential third variables
   - Explains why correlation alone is insufficient for causation
   - Applies reasoning to novel examples
 
 - **Follow-up Activities**:
+
   - Weekly "Correlation Detective" challenges
   - Student-created examples for peer analysis
   - Reflective journaling about noticing causal reasoning in daily life
@@ -670,23 +709,28 @@ print(results)
 ## Implementation Guidelines
 
 ### When to Use This Module
+
 - During lesson planning to anticipate student difficulties
 - When reviewing assessment data reveals persistent misunderstandings
 - When introducing complex or counterintuitive concepts
 - When students demonstrate resistance to changing their thinking
 
 ### Best Practices
+
 1. **Proactive Planning**
+
    - Identify potential misconceptions during lesson planning
    - Prepare multiple explanations and examples
    - Anticipate and plan for student questions
 
 2. **Formative Assessment**
+
    - Use frequent checks for understanding
    - Create a classroom culture where mistakes are learning opportunities
    - Provide immediate, specific feedback
 
 3. **Conceptual Change**
+
    - Make students aware of their misconceptions
    - Create cognitive conflict to challenge existing ideas
    - Provide compelling evidence and explanations
@@ -698,6 +742,7 @@ print(results)
    - Reinforce through multiple modalities
 
 ### Common Pitfalls to Avoid
+
 - Assuming students will "pick up" correct understanding over time
 - Focusing only on procedural knowledge without addressing conceptual understanding
 - Not allowing sufficient time for conceptual change
@@ -705,3 +750,273 @@ print(results)
 
 ** End of Misconception_Check_Module **
 
+# Essentials_course_structure
+
+| Module | Module/Objectives                           | Detailed Objectives                                                                                                                                                                                                                                                                                                                                                                                                                        | Suggested Modality/Content Type                                                                                    | Suggested Timings |
+| ------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| 1      | Introduction & Essential Concepts           | - Describe the purpose and scope of the course, including what will and will not be covered. <br> - Articulate the strategic value of Marketo Engage and its relevance in the current marketing technology landscape. <br> - Explain how Marketo Engage fits within the Adobe tech stack and its strategic integration with other Adobe solutions. <br> - Identify key market trends, customer challenges, and how Marketo addresses them. | Welcome Video                                                                                                      | 7 minutes         |
+| 2      | Industry & Market Background                | - Identify and summarise current industry trends and the competitive landscape in the marketing automation space. <br> - Describe common customer challenges that Marketo Engage is designed to address. <br> - Explain Adobe’s strategic positioning in the market relative to competitors. <br> - Articulate the rationale behind the development of Marketo Engage and the problems it was built to solve.                              | Short Video, Brief Interactive E-learning, Collaborative discussion or concept-mapping activity (e.g., Miro)       | 5 minutes         |
+| 3      | Product Overview & Showcase                 | - Demonstrate key functionalities of Marketo Engage that are most relevant to sales conversations. <br> - Navigate and explain the core components of the Marketo Engage user interface. <br> - Connect specific product features to real-world operational business challenges faced by customers. <br> - Explain how Marketo Engage delivers added value when integrated with other Adobe solutions.                                     | Brief Product Demo Video                                                                                           | 8 minutes         |
+| 4      | Unlocking Customer Value                    | - Describe key business use cases for Marketo Engage and the measurable business impacts they deliver. <br> - Articulate the value of multi-solution deals involving Marketo Engage, including relevant KPIs and success metrics. <br> - Apply common use cases and customer success stories effectively in sales conversations to demonstrate value and relevance.                                                                        | Concise Video, Quick Case Study Video, Structured peer dialogue or paired think-aloud activities, textual activity | 8 minutes         |
+| 5      | Sales, Pricing, & Packaging Strategy        | - Summarise the core sales motions, strategies, and sales plays used to position and sell Marketo Engage. <br> - Explain Adobe’s pricing and packaging strategies for Marketo Engage and how they deliver measurable business value to customers.                                                                                                                                                                                          | Quick Reference Video                                                                                              | 5 minutes         |
+| 6      | Spotting & Qualifying Sales Opportunities   | - Identify and interpret buying signals, trigger events, and other indicators of sales opportunities for Marketo Engage. <br> - Explain the process and criteria for qualifying Marketo Engage opportunities in alignment with Adobe’s sales methodology. <br> - Recognise ideal customer profiles, signal phrases, and qualifying questions that indicate strong product fit.                                                             | Prospecting Simulation, Brief Explanation Video, Branching scenario or collaborative scenario-building activity    | 7 minutes         |
+| 7      | Tell the Product Value Story                | - Use storytelling techniques to craft and deliver a compelling elevator pitch that clearly communicates the value and expected outcomes of Adobe products in realistic customer scenarios.                                                                                                                                                                                                                                                | Instructor-led online session, Storytelling powered by CoPilot session                                             | 90 minutes        |
+| 8      | Next Steps, Resources, & Continued Learning | - Summarise the key concepts and takeaways from the Marketo Essentials course. <br> - Identify relevant next steps, including communities of practice (e.g., Insiders groups) and internal enablement resources. <br> - Understand the structure and purpose of ongoing learning journeys related to Marketo Engage and how to access them.                                                                                                | Quick Recap Video, Curated Content Signpost                                                                        | 5 minutes         |
+
+** End of Essentials_course_structure **
+
+# Content_Map_Instructions
+
+## 1. What Is a Content Map?
+
+A visual or tabular tool that aligns learning goals with topics, activities, and delivery methods. Ensures every element supports measurable learning objectives.
+
+---
+
+## 2. Core Functions
+
+- **Aligns Objectives to Content** – Each objective maps to content and activities.
+- **Ensures Logical Flow** – Foundation before complexity; avoids gaps or repetition.
+- **Enables Collaboration** – A reviewable outline for SMEs and stakeholders.
+- **Supports Planning** – Flags time, tools, and updates across course delivery.
+
+---
+
+## 3. Content Map Structure
+
+Recommended as a table or visual layout with these core columns:
+
+| Column                      | Purpose                                                 |
+| --------------------------- | ------------------------------------------------------- |
+| **Key Topics**              | Concepts learners need to know                          |
+| **Learning Objectives**     | Actions learners will perform (see Learner Outcomes v3) |
+| **Learning Outcomes**       | Measurable post-training change                         |
+| **Learning Activities**     | Tasks to apply content (e.g., scenarios, journals)      |
+| **Resources & Delivery**    | Tools, formats, timing, accessibility                   |
+| **Assessments (optional)**  | Quizzes, projects, performance checks                   |
+| **Theory (optional)**       | Supporting pedagogy (e.g., Gagné, Bloom)                |
+| **Dependencies (optional)** | Required prerequisites or content links                 |
+
+---
+
+## 4. Required Top-Level Info
+
+Include before your map table:
+
+- **Course Title**
+- **Creation Date**
+- **Modality**
+- **Duration**
+- **Target Audience**
+- **Module Learning Goal**
+- **Module Learning Objective**
+
+---
+
+## 5. Design Applications
+
+- **Build lesson plans** and media directly from the map.
+- **Avoid duplication** by tracking activities and resources.
+- **Prototype or pilot** high-priority sections first.
+- **Apply UDL/accessibility** from the start.
+- **Align objectives and assessments** to enable evaluation.
+
+---
+
+## 6. Tips for Use
+
+- Use clear, action-based language for objectives.
+- Keep the map concise and update as content evolves.
+- Involve stakeholders early in the design process.
+
+---
+
+## 7. Summary
+
+A well-structured Content Map connects every topic and task to course goals, reduces waste, supports inclusive design, and ensures consistent quality from planning to delivery.
+**End of Content Map Instructions**
+
+# Learner_Outcomes_Instructions
+
+## Purpose
+
+Use this guide to produce high-quality Learning Gaps, Goals, Outcomes, and Objectives (GGOO) aligned to performance gaps and instructional best practice. All elements must follow SMART and ABCD principles.
+
+## Required Inputs
+
+- Course title/theme
+- Clearly defined performance gap (baseline + target)
+
+## Definitions & Examples
+
+### Learning Gap – Why the course exists
+
+Shortfall in job performance (e.g., agents resolve only 50% of issues on first call).
+
+- Include: action, baseline, target, root cause, business risk
+- Analogy: Diagnosis
+
+**Example:**  
+Current satisfaction score: 70% (target: 85%)  
+Cause: Weak troubleshooting  
+Impact: Risk of churn
+
+### Learning Goal – Strategic vision
+
+Big-picture aim that addresses the gap and links to business needs.
+
+- Analogy: Vision
+
+**Example:**  
+Equip support agents to improve satisfaction from 70% → 85% within 3 months.
+
+### Learning Objective – In-course performance
+
+What learners will do by the end of training.
+
+- Must follow ABCD (Audience, Behaviour, Condition, Degree)
+- Must be SMART (Specific, Measurable, Achievable, Relevant, Time-bound)
+- Align with goal and assessment
+
+**Example:**  
+Given realistic scenarios (Condition), agents (Audience) will troubleshoot effectively (Behaviour) in 90% of simulations (Degree).
+
+### Learning Outcome – Post-course impact
+
+Real-world improvement measured after training.
+
+- Must include: action, KPI, data source, timeframe
+
+**Example:**  
+Within 30 days, agents increase first-call resolution from 50% → 75% (dashboard-verified).
+
+## Validation Checklist
+
+- Gap linked to measurable need?
+- Goal solves gap?
+- Objective follows ABCD/SMART?
+- Outcome is observable/measurable?
+  **End of Learner Outcomes Instructions**
+
+# Adobe_Sellers_Learner_Personas
+---
+
+```json learner_profiles
+{
+  "learner_personas": [
+    {
+      "name": "Layla Raj",
+      "role": "Enterprise Account Executive",
+      "career_stage": "early-career",
+      "company": "Adobe",
+      "location": "London, UK",
+      "age": 26,
+      "education": "BSc Business",
+      "ethnicity": "Indian",
+      "primary_responsibilities": [
+        "Drive new business and account expansion across Document Cloud and Experience Cloud",
+        "Manage stakeholder communications from managers to C-level",
+        "Coordinate with legal, marketing and engineering teams"
+      ],
+      "goals": [
+        "Hit/exceed quota; qualify for President's Club",
+        "Land a Fortune 500 reference account",
+        "Progress to Senior Account Manager or Director",
+        "Increase confidence with enterprise-level stakeholders",
+        "Develop advanced strategic-selling and negotiation skills"
+      ],
+      "barriers_to_learning": [
+        "≤ 1 hour per week available for formal learning",
+        "Overwhelmed by breadth of Adobe product suite",
+        "Limited experience with enterprise negotiations and procurement",
+        "Impostor syndrome during C-suite interactions",
+        "Low engagement with theoretical content; needs actionable insights"
+      ],
+      "learning_preferences": [
+        "Positive if content is relevant, practical and concise",
+        "Prefers micro-learning videos < 15 min with actionable tips",
+        "Enjoys gamified elements, simulations, quizzes, role-plays",
+        "Values peer-driven collaboration and discussion forums",
+        "Needs on-demand, searchable, just-in-time resources"
+      ],
+      "technology": {
+        "devices": ["laptop", "smartphone"],
+        "core_tools": [
+          "Salesforce CRM",
+          "LinkedIn Sales Navigator",
+          "Slack",
+          "Adobe analytics"
+        ],
+        "requirements": ["fully mobile-compatible", "offline access for travel"]
+      },
+      "narrative_snapshot": "Recently promoted from SDR to Enterprise AE, Layla is energetic, digitally fluent and eager to prove herself. She juggles mid-tier UK/EU clients and wants rapid, practical guidance that directly boosts quota-bearing activities."
+    },
+    {
+      "name": "John Smith",
+      "role": "Senior Enterprise Account Director",
+      "career_stage": "seasoned",
+      "company": "Adobe",
+      "location": "New York, USA",
+      "age": 45,
+      "education": "MBA",
+      "industry_focus": ["Finance", "Retail"],
+      "experience_years": 20,
+      "years_at_adobe": 5,
+      "primary_responsibilities": [
+        "Own strategic Fortune 500 accounts and revenue targets",
+        "Lead cross-functional pursuits and executive engagements",
+        "Develop multi-year account plans",
+        "Mentor junior reps"
+      ],
+      "goals": [
+        "Maintain President's Club status",
+        "Mentor emerging sales talent and progress to VP role",
+        "Preserve trusted-advisor status with C-suite clients",
+        "Stay current on AI-driven sales trends",
+        "Deliver long-term client value via consultative selling"
+      ],
+      "barriers_to_learning": [
+        "Limited time due to travel and client meetings",
+        "Dislikes generic or introductory content",
+        "Sceptical of new methodologies without clear ROI",
+        "Difficulty unlearning entrenched habits",
+        "Friction adopting new digital/AI platforms"
+      ],
+      "learning_preferences": [
+        "Values expertly curated, advanced-level material",
+        "Rejects compliance-oriented, checkbox learning",
+        "Trusts content vetted by proven sales experts",
+        "Likes peer-based round-tables and expert panels",
+        "Uses webinars, strategic podcasts; prefers 1.5× playback",
+        "Needs embedded, just-in-time resources in workflow"
+      ],
+      "technology": {
+        "devices": ["high-performance laptop", "tablet", "smartphone"],
+        "requirements": [
+          "enterprise-secure platforms",
+          "downloadable materials for offline use",
+          "dual-monitor friendly for virtual training"
+        ]
+      },
+      "narrative_snapshot": "A veteran sales director handling complex global accounts, John values depth over breadth. He seeks highly advanced, immediately applicable insights and is willing to invest time only in learning that demonstrably sharpens strategic selling prowess."
+    }
+  ]
+}
+```
+
+---
+
+## Individual Persona Details
+
+### Persona 1 – Layla Raj
+**Enterprise Account Executive | Early Career**
+
+Recently promoted from SDR to Enterprise AE, Layla is energetic, digitally fluent and eager to prove herself. She juggles mid-tier UK/EU clients and wants rapid, practical guidance that directly boosts quota-bearing activities.
+
+### Persona 2 – John Smith  
+**Senior Enterprise Account Director | Seasoned**
+
+A veteran sales director handling complex global accounts, John values depth over breadth. He seeks highly advanced, immediately applicable insights and is willing to invest time only in learning that demonstrably sharpens strategic selling prowess.
+
+---
+**End of Learner Personas** 

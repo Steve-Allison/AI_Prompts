@@ -1,4 +1,5 @@
-# Unified*Content‑Map_Generation*&\_Analysis_Prompt
+
+# Unified Content‑Map Generation & Analysis Prompt
 
 _(version - 3 – incorporates regex fallbacks, resilient JSON extraction, and per‑module default export)_
 
@@ -18,11 +19,11 @@ Placeholder or partial outputs are **forbidden**.
 
 | Purpose                                | **Exact / Pattern‑Matched File Name**               |
 | -------------------------------------- | --------------------------------------------------- |
-| Course structure (8‑module outline)    | **Essentials_course_structure.md**                  |
+| Course structure (8‑module outline)    | **Essentials_course_structure**                  |
 | Learning gap, goal & objectives        | **\*\_Essentials_Learning_Design.md** (any prefix)  |
-| Prompt‑module definitions              | **ai_prompt_modules_minimal.md**                    |
-| Authoring instructions for content map | **\*\_Content_Map_Instructions_v3.md** (any prefix) |
-| Target‑audience personas               | **\*\_\_Learner_Personas.md** (any prefix)          |
+| Prompt‑module definitions              | **Adobe_FRE_mini_omni_Supporter.md**                    |
+| Authoring instructions for content map | **Content_Map_Instructions** (any prefix) |
+| Target‑audience personas               | **Adobe_Sellers_Learner_Personas** (any prefix)          |
 
 If any file above is missing or unreadable, invoke **Halt & Report**.
 
@@ -52,7 +53,7 @@ If any file above is missing or unreadable, invoke **Halt & Report**.
 ## 3 Core Data to Extract & Lock
 
 | Data                                   | Extraction rule                                                                                                                                                                                        |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Learning Gap, Goal & Objectives**    | Copy verbatim from _\_Essentials_Learning_Design.md_.                                                                                                                                                  |
 | **8‑Module Course Structure**          | Extract from _Essentials_course_structure.md_.                                                                                                                                                         |
 | **Delivery Mode → `mode`**             | Parse the first heading/table cell matching \*\*`/Modality                                                                                                                                             | Delivery[ _-]?Mode | Delivery[ _-]?Type/i`**; if no match, default to `"self‑paced e‑learning"`. |
@@ -141,7 +142,7 @@ For each activity/assessment in Layer 1 provide:
 
 _No remixing of module outputs unless SME‑approved._
 
-xample:
+Example:
 **Module 1 – Activity:**  
 - Scenario-based video simulation…  
 - Accessibility: WCAG 2.2 AA, alt text present  
