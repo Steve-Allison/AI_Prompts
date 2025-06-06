@@ -117,12 +117,12 @@
   5. Draft activities: summary, detailed, differentiation/choice board, duration, why, prompts, checklist, contingency.
   - 5a. Duration seed – For each drafted activity, apply the timing heuristic that best fits its format (see Table A below) and record the result as duration_estimate_min.
   - 5b. Confidence note – Attach duration_confidence (± percentage) so reviewers see the margin of error.
-  6. Tag cues.
-  7. QA/DEI/audit.
-  8. Asset planning if needed.
-  9. Reviewer customisation, log changes.
-  10. Feedback loop post-activity.
-  11. Export in requested format.
+  1. Tag cues.
+  2. QA/DEI/audit.
+  3. Asset planning if needed.
+  4. Reviewer customisation, log changes.
+  5. Feedback loop post-activity.
+  6. Export in requested format.
 - Error: if objectives/assessment/mode missing, halt; if QA/DEI fails, flag/block export.
 
 ---
@@ -273,11 +273,9 @@
 
 ---
 
-**End of Minimal AI Prompt Modules**
+## Misconception_Check_Module
 
-# Misconception_Check_Module
-
-## Metadata
+### Metadata
 
 - **Version**: 1.1.0
 - **Last Updated**: 2025-06-03
@@ -296,7 +294,7 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
 
 ## Inputs
 
-### Required:
+### Required
 
 - **Key Concepts** from `Cognitive_Keyword_Watchlist_Module`
 
@@ -322,7 +320,7 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
     - evidence_based_strategies: Array of {strategy: string, description: string}
     - conceptual_frameworks: Array of {framework: string, components: Array<string>}
 
-### Optional:
+### Optional
 
 - **Student Work Samples**
   - Type: Array of objects
@@ -388,7 +386,7 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
 
 ## Integration Points
 
-### Pre-requisite Modules:
+### Pre-requisite Modules
 
 - **`Cognitive_Keyword_Watchlist_Module`**
 
@@ -407,7 +405,7 @@ The `Misconception_Check_Module` systematically identifies, annotates, and addre
   - Provides research on how misconceptions form in the subject area
   - Suggests evidence-based strategies for conceptual change
 
-### Dependent Modules:
+### Dependent Modules
 
 - **`Differentiation_Scaffolding_Module`**
 
@@ -498,15 +496,15 @@ print(results)
   - **Cause**: Insufficient data to generate diagnostic questions
   - **Solution**: Provide more concept details or learning activities
 
-## Performance Considerations
+## Performance_Considerations
 
 - Processing time increases with the number of concepts and complexity of misconceptions
 - AI-based analysis may require additional processing resources
 - Large concept inventories may need to be processed in batches
 
-## Implementation Workflow
+## Implementation_Workflow
 
-1. **Misconception Identification**
+1. **Misconception_Identification**
 
    - Review research on common misconceptions in the subject area
    - Analyse student work and assessment data
@@ -519,7 +517,7 @@ print(results)
    - Note the root causes of the misconception
    - Identify any patterns or related misconceptions
 
-3. **Correction Development**
+3. **Correction_Development**
 
    - Develop research-based explanations to correct the misconception
    - Create analogies or models that help restructure understanding
@@ -538,206 +536,206 @@ print(results)
 
 ---
 
-## Module Output Structure
+## Module_Output_Structure
 
 ### Concept: [Concept Name]
 
-#### 1. Misconception Profile
+#### 1. Misconception_Profile
 
 - **Description**: Clear statement of the misconception
 - **Prevalence**: How common this misconception is among learners
-- **Root Causes**: Why this misconception develops
-- **Related Concepts**: Connections to other ideas that might be affected
-- **Research Base**: Summary of relevant educational research
+- **Root_Causes**: Why this misconception develops
+- **Related_Concepts**: Connections to other ideas that might be affected
+- **Research_Base**: Summary of relevant educational research
 
-#### 2. Diagnostic Tools
+#### 2. Diagnostic_Tools
 
-- **Formative Questions**: Questions to surface the misconception
-- **Common Errors**: Typical mistakes that indicate this misunderstanding
-- **Assessment Items**: Sample test questions that reveal the misconception
-- **Classroom Activities**: Brief activities to diagnose understanding
+- **Formative_Questions**: Questions to surface the misconception
+- **Common_Errors**: Typical mistakes that indicate this misunderstanding
+- **Assessment_Items**: Sample test questions that reveal the misconception
+- **Classroom_Activities**: Brief activities to diagnose understanding
 
-#### 3. Correction Strategies
+#### 3. Correction_Strategies
 
-- **Direct Instruction**: Clear, explicit explanations
-- **Analogies & Models**: Helpful comparisons and representations
-- **Cognitive Conflict**: Activities that create cognitive dissonance
-- **Metacognitive Prompts**: Questions that prompt reflection on thinking
+- **Direct_Instruction**: Clear, explicit explanations
+- **Analogies_&_Models**: Helpful comparisons and representations
+- **Cognitive_Conflict**: Activities that create cognitive dissonance
+- **Metacognitive_Prompts**: Questions that prompt reflection on thinking
 
-#### 4. Integration with Other Modules
+#### 4. Integration_with_Other_Modules
 
-- **`Cognitive_Keyword_Watchlist_Module` Connections**:
+- **`Cognitive_Keyword_Watchlist_Module`_Connections**:
 
   - Key terms to emphasize
   - Related concepts to reinforce
   - Prerequisite knowledge to review
 
-- **`Differentiation_Scaffolding_Module` Connections**:
+- **`Differentiation_Scaffolding_Module`_Connections**:
 
   - Support strategies for struggling learners
   - Extension activities for advanced students
   - Grouping suggestions
 
-- **`Learning_Activity_Generator_Module` Connections**:
+- **`Learning_Activity_Generator_Module`_Connections**:
   - Activities to build correct understanding
   - Practice problems with targeted feedback
   - Discussion prompts
 
-#### 5. Assessment & Monitoring
+#### 5. Assessment_&_Monitoring
 
-- **Success Indicators**: How to know the misconception is resolved
-- **Follow-up Activities**: For reinforcement and application
-- **Common Pitfalls**: What to watch for during instruction
-- **Progress Monitoring**: Tools for tracking student understanding
+- **Success_Indicators**: How to know the misconception is resolved
+- **Follow-up_Activities**: For reinforcement and application
+- **Common_Pitfalls**: What to watch for during instruction
+- **Progress_Monitoring**: Tools for tracking student understanding
 
 ---
 
-## Example Output
+## Example_Output
 
 ### Concept: "Correlation vs. Causation"
 
-#### 1. Misconception Profile
+#### 1. Misconception_Profile
 
 - **Description**:
   Students believe that when two variables are correlated, one must cause the other.
 - **Prevalence**:
   Very common across all age groups and education levels.
-- **Root Causes**:
+- **Root_Causes**:
   - Everyday language often conflates correlation and causation
   - Confirmation bias leads people to see patterns that fit their expectations
   - Lack of understanding of alternative explanations (third variables, coincidence)
-- **Research Base**:
+- **Research_Base**:
   - Well-documented in statistics education research
   - Persists even after instruction without targeted intervention
   - Addressed in Common Core and state standards
 
-#### 2. Diagnostic Tools
+#### 2. Diagnostic_Tools
 
-- **Formative Questions**:
+- **Formative_Questions**:
 
   - "If two things happen together, does that mean one causes the other? Why or why not?"
   - "Can you think of two things that happen at the same time but aren't causally related?"
 
-- **Common Errors**:
+- **Common_Errors**:
 
   - Assuming A causes B without considering other explanations
   - Ignoring the possibility of a third variable
   - Confusing temporal sequence with causation
 
-- **Assessment Items**:
+- **Assessment_Items**:
   - Multiple choice questions with plausible alternative explanations
   - Short answer prompts asking students to explain why correlation ≠ causation
   - Data interpretation tasks requiring identification of possible third variables
 
-#### 3. Correction Strategies
+#### 3. Correction_Strategies
 
-- **Direct Instruction**:
+- **Direct_Instruction**:
 
   - Clearly define and distinguish between correlation and causation
   - Present the "third variable problem" and "directionality problem"
   - Use the phrase "correlation does not imply causation" and explain why
 
-- **Analogies & Models**:
+- **Analogies_&_Models**:
 
   - "Ice cream and drowning" example (both increase in summer)
   - "Shoe size and reading level" in elementary students
   - Interactive simulations showing spurious correlations
 
-- **Cognitive Conflict**:
+- **Cognitive_Conflict**:
 
   - Present surprising examples that challenge assumptions
   - Have students generate their own examples
   - Show how the same correlation could support opposite causal claims
 
-- **Metacognitive Prompts**:
+- **Metacognitive_Prompts**:
   - "What other explanations could there be for this relationship?"
   - "How could we test whether this is actually a causal relationship?"
   - "What evidence would convince you that A causes B?"
 
-#### 4. Integration with Other Modules
+#### 4. Integration_with_Other_Modules
 
-- **`Cognitive_Keyword_Watchlist_Module` Connections**:
+- **`Cognitive_Keyword_Watchlist_Module`_Connections**:
 
   - Key terms: "correlation", "causation", "confounding variable", "spurious"
   - Related concepts: experimental design, variables, controls
   - Prerequisites: understanding of variables, basic graphing
 
-- **`Differentiation_Scaffolding_Module` Connections**:
+- **`Differentiation_Scaffolding_Module`_Connections**:
 
   - Support: Provide structured templates for analyzing relationships
   - Extension: Have students research and present real-world examples
   - Assessment: Create a "myth-busting" project about common causal fallacies
 
-- **`Learning_Activity_Generator_Module` Connections**:
+- **`Learning_Activity_Generator_Module`_Connections**:
   - Activity: "Correlation or Causation?" card sort
   - Discussion: Analyse news headlines for causal claims
   - Project: Find and critique examples of misleading statistics in media
 
-#### 5. Assessment & Monitoring
+#### 5. Assessment_&_Monitoring
 
-- **Success Indicators**:
+- **Success_Indicators**:
 
   - Can generate multiple explanations for a correlation
   - Identifies potential third variables
   - Explains why correlation alone is insufficient for causation
   - Applies reasoning to novel examples
 
-- **Follow-up Activities**:
+- **Follow-up_Activities**:
 
   - Weekly "Correlation Detective" challenges
   - Student-created examples for peer analysis
   - Reflective journaling about noticing causal reasoning in daily life
 
-- **Progress Monitoring**:
+- **Progress_Monitoring**:
   - Exit tickets with novel scenarios
   - Pre/post assessments of understanding
   - Analysis of student explanations for causal reasoning
 
 ---
 
-## Implementation Guidelines
+## Implementation_Guidelines
 
-### When to Use This Module
+### When_to_Use_This_Module
 
 - During lesson planning to anticipate student difficulties
 - When reviewing assessment data reveals persistent misunderstandings
 - When introducing complex or counterintuitive concepts
 - When students demonstrate resistance to changing their thinking
 
-### Best Practices
+### Best_Practices
 
-1. **Proactive Planning**
+1. **Proactive_Planning**
 
    - Identify potential misconceptions during lesson planning
    - Prepare multiple explanations and examples
    - Anticipate and plan for student questions
 
-2. **Formative Assessment**
+2. **Formative_Assessment**
 
    - Use frequent checks for understanding
    - Create a classroom culture where mistakes are learning opportunities
    - Provide immediate, specific feedback
 
-3. **Conceptual Change**
+3. **Conceptual_Change**
 
    - Make students aware of their misconceptions
    - Create cognitive conflict to challenge existing ideas
    - Provide compelling evidence and explanations
    - Allow time for reflection and reconstruction of understanding
 
-4. **Integration with Instruction**
+4. **Integration_with_Instruction**
    - Weave misconception addressing throughout lessons
    - Connect to real-world applications
    - Reinforce through multiple modalities
 
-### Common Pitfalls to Avoid
+### Common_Pitfalls_to_Avoid
 
 - Assuming students will "pick up" correct understanding over time
 - Focusing only on procedural knowledge without addressing conceptual understanding
 - Not allowing sufficient time for conceptual change
 - Failing to connect new learning to students' prior knowledge
 
-** End of Misconception_Check_Module **
+**End of Misconception_Check_Module**
 
 # Essentials_course_structure
 
@@ -752,7 +750,7 @@ print(results)
 | 7      | Tell the Product Value Story                | - Use storytelling techniques to craft and deliver a compelling elevator pitch that clearly communicates the value and expected outcomes of Adobe products in realistic customer scenarios.                                                                                                                                                                                                                                                | Instructor-led online session, Storytelling powered by CoPilot session                                             | 90 minutes        |
 | 8      | Next Steps, Resources, & Continued Learning | - Summarise the key concepts and takeaways from the Marketo Essentials course. <br> - Identify relevant next steps, including communities of practice (e.g., Insiders groups) and internal enablement resources. <br> - Understand the structure and purpose of ongoing learning journeys related to Marketo Engage and how to access them.                                                                                                | Quick Recap Video, Curated Content Signpost                                                                        | 5 minutes         |
 
-** End of Essentials_course_structure **
+**End of Essentials_course_structure**
 
 # Content_Map_Instructions
 
@@ -777,11 +775,11 @@ Recommended as a table or visual layout with these core columns:
 
 | Column                      | Purpose                                                 |
 | --------------------------- | ------------------------------------------------------- |
-| **Key Topics**              | Concepts learners need to know                          |
-| **Learning Objectives**     | Actions learners will perform (see Learner Outcomes v3) |
-| **Learning Outcomes**       | Measurable post-training change                         |
-| **Learning Activities**     | Tasks to apply content (e.g., scenarios, journals)      |
-| **Resources & Delivery**    | Tools, formats, timing, accessibility                   |
+| **Key_Topics**              | Concepts learners need to know                          |
+| **Learning_Objectives**     | Actions learners will perform (see Learner Outcomes v3) |
+| **Learning_Outcomes**       | Measurable post-training change                         |
+| **Learning_Activities**     | Tasks to apply content (e.g., scenarios, journals)      |
+| **Resources_&_Delivery**    | Tools, formats, timing, accessibility                   |
 | **Assessments (optional)**  | Quizzes, projects, performance checks                   |
 | **Theory (optional)**       | Supporting pedagogy (e.g., Gagné, Bloom)                |
 | **Dependencies (optional)** | Required prerequisites or content links                 |
@@ -792,13 +790,13 @@ Recommended as a table or visual layout with these core columns:
 
 Include before your map table:
 
-- **Course Title**
-- **Creation Date**
+- **Course_Title**
+- **Creation_Date**
 - **Modality**
 - **Duration**
-- **Target Audience**
-- **Module Learning Goal**
-- **Module Learning Objective**
+- **Target_Audience**
+- **Module_Learning_Goal**
+- **Module_Learning_Objectives**
 
 ---
 
@@ -858,7 +856,7 @@ Big-picture aim that addresses the gap and links to business needs.
 
 **Example:** Equip support agents to improve satisfaction from 70% to 85% in 3 months.
 
-### Learning Objective – In-course performance
+### Learning Objectives – In-course performance
 
 What learners will achieve by end of training:
 
@@ -998,3 +996,5 @@ Recently promoted from SDR to Enterprise AE, Layla is energetic, digitally fluen
 A veteran sales director handling complex global accounts, John values depth over breadth. He seeks highly advanced, immediately applicable insights and is willing to invest time only in learning that demonstrably sharpens strategic selling prowess.
 
 **End of Learner Personas**
+
+**End of Minimal AI Prompt Modules**

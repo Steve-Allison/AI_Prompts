@@ -1,6 +1,8 @@
 # 🧠 AI Instructional Module Registry
 
-Welcome to the **AI Instructional Modules Registry** — a modular, callable, version-controlled system designed to support AI-driven instructional design, media scripting, accessibility validation, and content enrichment.
+Welcome to the **AI Instructional Modules Registry** — a modular, callable, version-controlled system for AI-driven instructional design, media scripting, accessibility validation, and content enrichment. 
+
+> **Note:** This project is now free from markdownlint or formatting restrictions. Module specifications are written for clarity, not to conform to external linting rules.
 
 ---
 
@@ -40,25 +42,29 @@ Modules are callable using a uniform invocation pattern:
 include_module("<Module_Name>")
 ```
 
+All module names use underscores (no spaces) for consistency, matching the codebase and orchestration tools.
+
 #### 🧱 Module Categories
 
 ### Module Reference
 
-| Module Name                          | Function                                                                               | Key Dependencies                                                           |
-| ------------------------------------ | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `Learning_Asset_Module`              | Plans instructional asset format, structure, and layout.                               | `Visual_Style_Module`, `Accessibility_Module`                              |
-| `Visual_Style_Module`                | Defines tone-appropriate visual direction and framing.                                 | `Tone_of_Voice_Module`                                                     |
-| `Pedagogy_Module`                    | Tags and aligns content to learning theories.                                          | `Cognitive_Keyword_Watchlist_Module`                                       |
-| `Tone_of_Voice_Module`               | Aligns voice and delivery tone to emotion and audience.                                | None (foundational)                                                        |
-| `Accessibility_Module`               | Applies WCAG and inclusive design adaptations.                                         | `Visual_Style_Module`                                                      |
-| `Cognitive_Keyword_Watchlist_Module` | Tracks cognitively/emotionally salient terms and profiles audience engagement.         | None (foundational)                                                        |
-| `Video_Script_Generator_Module`      | Generates full instructional scripts from input goals and metadata.                    | `Cognitive_Keyword_Watchlist_Module`, `Tone_of_Voice_Module`               |
-| `Learning_Theories_Checklist_Module` | Performs QA checks on pedagogical completeness.                                        | `Pedagogy_Module`                                                          |
-| `Instructional_Segment_Mapper`       | Maps segments to structure, role, theory tags, and scaffolding levels.                 | `Cognitive_Keyword_Watchlist_Module`, `Pedagogy_Module`                    |
-| `Learning_Activity_Generator_Module` | Generates scaffolded activities aligned to objectives and audience level.              | `Pedagogy_Module`, `Cognitive_Keyword_Watchlist_Module`                    |
-| `Theory_Enhancement_Library`         | Supplies contextual academic theory snippets and citations.                            | `Pedagogy_Module`                                                          |
-| `Misconception_Check_Module`         | Surfaces, explains, and provides corrective strategies for common misconceptions.      | `Cognitive_Keyword_Watchlist_Module`, `Learning_Activity_Generator_Module` |
-| `Differentiation_Scaffolding_Module` | Generates scaffolded supports and extension/challenge activities for diverse learners. | `Learning_Activity_Generator_Module`, `Misconception_Check_Module`         |
+| Module_Name                           | Function                                                                               | Key_Dependencies                                                           |
+| ------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Learning_Asset_Module`               | Plans instructional asset format, structure, and layout.                               | `Visual_Style_Module`, `Accessibility_Module`                              |
+| `Visual_Style_Module`                 | Defines tone-appropriate visual direction and framing.                                 | `Tone_of_Voice_Module`                                                     |
+| `Pedagogy_Module`                     | Tags and aligns content to learning theories.                                          | `Cognitive_Keyword_Watchlist_Module`                                       |
+| `Tone_of_Voice_Module`                | Aligns voice and delivery tone to emotion and audience.                                | None (foundational)                                                        |
+| `Accessibility_Module`                | Applies WCAG and inclusive design adaptations.                                         | `Visual_Style_Module`                                                      |
+| `Cognitive_Keyword_Watchlist_Module`  | Tracks cognitively/emotionally salient terms and profiles audience engagement.         | None (foundational)                                                        |
+| `Video_Script_Generator_Module`       | Generates full instructional scripts from input goals and metadata.                    | `Cognitive_Keyword_Watchlist_Module`, `Tone_of_Voice_Module`               |
+| `Learning_Theories_Checklist_Module`  | Performs QA checks on pedagogical completeness.                                        | `Pedagogy_Module`                                                          |
+| `Instructional_Segment_Mapper`        | Maps segments to structure, role, theory tags, and scaffolding levels.                 | `Cognitive_Keyword_Watchlist_Module`, `Pedagogy_Module`                    |
+| `Learning_Activity_Generator_Module`  | Generates scaffolded activities aligned to objectives and audience level.              | `Pedagogy_Module`, `Cognitive_Keyword_Watchlist_Module`                    |
+| `Theory_Enhancement_Library`          | Supplies contextual academic theory snippets and citations.                            | `Pedagogy_Module`                                                          |
+| `Misconception_Check_Module`          | Surfaces, explains, and provides corrective strategies for common misconceptions.      | `Cognitive_Keyword_Watchlist_Module`, `Learning_Activity_Generator_Module` |
+| `Differentiation_Scaffolding_Module`  | Generates scaffolded supports and extension/challenge activities for diverse learners. | `Learning_Activity_Generator_Module`, `Misconception_Check_Module`         |
+
+All module names use underscores for consistency.
 
 ### Glossary of Key Terms
 
@@ -76,7 +82,7 @@ include_module("<Module_Name>")
 
 ## 🔁 Orchestration & Usage
 
-Modules are designed to be composable in prompt workflows using:
+Modules are designed to be freely composed in prompt workflows or orchestration tools. There are no markdownlint or formatting constraints—focus on instructional clarity and modularity.
 
 ```python
 include_module("Module_Name")
@@ -95,6 +101,7 @@ include_module("Accessibility_Module")
 include_module("Cognitive_Keyword_Watchlist_Module")
 ```
 
+Modules can be extended, replaced, or combined in any order to suit your instructional or AI workflow.
 ---
 
 ## 🗂 Structure
@@ -114,7 +121,8 @@ Each module is stored as a versioned Markdown specification with the following:
 
 - Modules are updated through version control.
 - This repository supports instructional design teams, AI prompt engineers, and modular orchestration toolchains.
-- Extendable via controller logic or metadata frameworks.
+- Module specs are written for clarity and instructional value, not for compliance with markdownlint or other linters.
+- Extendable via controller logic, prompt frameworks, or metadata overlays.
 
 ---
 

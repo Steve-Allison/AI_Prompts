@@ -13,7 +13,7 @@
 | **Critical On‑the‑Job Action to Improve**                                    |            |
 | **Current Baseline Performance**<br/>(metric or brief description)           |            |
 | **Target Performance / KPI & Timeframe**                                     |            |
-| **Root Cause of the Gap**<br/>(knowledge / skill / motivation / environment) |            |
+| **Root Cause of the Gap**<br/>(knowledge / skill / motivation / environment) |            |
 | **Planned Assessment or Evidence Source**                                    |            |
 
 ## Optional Details
@@ -35,8 +35,8 @@
 
    * One Learning Gap statement.
    * One overarching Learning Goal.
-   * One Learning Objective (Bloom + ABCD + SMART) complete with theory‑alignment appendix.
+   * One Learning Objective (Bloom + ABCD + SMART) complete with theory‑alignment appendix.
 
 ---
 
-*Document version 1.0 | UK English | © SAN LX Design*
+*Document version 1.0 | UK English | © SAN LX Design*

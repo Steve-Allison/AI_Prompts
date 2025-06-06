@@ -179,4 +179,4 @@ Future versions may include:
 **Status:** Active
 **Linked Modules:** Pedagogy_Module, Learning_Theories_Checklist_Module, Script Generator Module
 
-[End of Theory_Enhancement_Library module]
+[End of Theory_Enhancement_Library module]
