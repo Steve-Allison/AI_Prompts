@@ -1,10 +1,10 @@
-# Unified_Content‑Map_Generation_and_Analysis_Prompt  
+# Unified_Content‑Map_Generation_and_Analysis_Prompt
 
-## (version_3.4 – adds JSON_handshake, enumerated_error_codes, RANDOM_SEED, strict_output_schemas, token‑budgets, chunk‑size_ceiling, and MIME_fallback)
+## (version 3.4 – adds JSON handshake, enumerated error codes, RANDOM_SEED, strict output schemas, token‑budgets, chunk‑size ceiling, and MIME fallback)
 
 ---
 
-## ⚠️_Execution_Directive  
+## ⚠️ Execution Directive  
 
 All numbered instructions are **mandatory**. If any requirement is unmet, **halt immediately** and output a single bullet‑list error report using the **enumerated error codes** in §10.  
 No placeholder text is permitted; every section must be complete.
@@ -129,7 +129,7 @@ Record **file‑path → section → heading hierarchy** for each heading.
 
 ###  4.4 Essentials Module Assignment  
 
-* Locate the Markdown table whose first header row (case‑insensitive) contains **module title** and **suggested timings** (accepts header aliases such as _title_ or _timings_).—this is treated as the **Essentials_course_structure** table (case‑insensitive search). Treat the first row as headers and extract the **“Module Title”** column for authoritative module names. Halt **E13** if the table or headers are not detected.  
+* Locate the _first heading_ that contains the phrase **Essentials_course_structure** (case‑insensitive). Treat the **next Markdown table** that follows this heading as authoritative. Do **not** rely on key‑value patterns; if the heading is missing, emit **E13**.—this is treated as the **Essentials_course_structure** table (case‑insensitive search). Treat the first row as headers and extract the **“Module Title”** column for authoritative module names. Halt **E13** if the table or headers are not detected.  
 * For each (Topic, Sub‑topic) pair, compute similarity to the eight module titles.  
 * Assign to the highest‑scoring module (≥ 0.75).  
 * If no module ≥ 0.75, send to SME Review list and halt.
@@ -144,6 +144,7 @@ Record **file‑path → section → heading hierarchy** for each heading.
 
 _Coverage check_ — halt **E03** if < 90 % of objective verbs appear.  
 _Duplicate check_ — halt **E04** if duplicate topics across modules.
+_Depth flag check_ — halt **E06** if any Topic row’s **Depth** cell is blank or not one of _brief_, _standard_, _deep_ (case‑insensitive).
 
 ---
 
@@ -191,16 +192,19 @@ _Duplicate check_ — halt **E04** if duplicate topics across modules.
 | Target Audience | New Marketo Administrators |
 | Learning Goal | Improve daily marketing‑automation tasks |
 | High‑level Objectives | OBJ‑1 Identify key metrics; OBJ‑2 Build basic nurture |
+| Guidance | **Depth Flags** – SMEs must assign _brief_, _standard_ or _deep_ to every Topic row in the Content‑Map table. These flags govern how much explanatory detail, example count and activity richness the Course‑Content Writer will generate. |
 
 ###  7.2 Layer 1 — Content‑Map Table  
 
 ```markdown
-| Module ID | Module Title | Duration | Key Topics | Sub‑topics | Learning Objectives (ID) | Activities / Assessments | Learning Outcomes |
-| 1 | Reporting & Analytics | 45 min | Reporting | Metrics vs KPIs | OBJ‑2 | Quiz + demo | Learners can identify key metrics |
+| Module ID | Module Title | Duration | Key Topics | Sub‑topics | **Depth** (brief / standard / deep) | Learning Objectives (ID) | Activities / Assessments | Learning Outcomes |
+| 1 | Reporting & Analytics | 45 min | Reporting | Metrics vs KPIs | standard | OBJ‑2 | Quiz + demo | Learners can identify key metrics |
 ```
 
-###  7.3 Layer 2 — Appendix Schema  
-
+###  7.3 Layer 2 — Appendix Schema
+>
+> **Implementation note** – Build Appendix rows **by iterating the already‑validated Layer 1 Content‑Map table in order**. Do **not** attempt additional regex extraction from source files. Avoid look‑behind assertions; use forward‑matching patterns only.
+  
 ```markdown
 | Module ID | Module Title | Key Topic | Sub‑topic | Activity / Assessment Output | Differentiation & Scaffolding | Accessibility (WCAG 2.2 AA) | Instructional Alignment (Bloom / Gagné / Kirkpatrick / ARCS) | Misconception Checks | Optional: Theory / Cognitive Flags |
 ```
