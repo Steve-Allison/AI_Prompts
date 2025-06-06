@@ -1,6 +1,7 @@
-# 🧠 Video Script Generator Module
 
-## Version: 5.5
+# 🧠 Video_Script_Generator_Module
+
+## Version: 5.6.0
 
 ---
 
@@ -15,20 +16,23 @@ All phrasing, markers, and segment structures are mandatory unless explicitly ov
 
 ## 🎯 Purpose
 
-Generate voice-first corporate learning scripts that are:
+Generate voice‑first corporate learning scripts that are:
 
 - Written in natural, idiomatic **British English**
-- Aligned to adult learning theory (Bloom, Gagné, ARCS)
-- Structured using Mayer-aligned instructional design
+- Aligned to adult learning theory (Bloom, Gagné, ARCS, SOLO)
+- Structured using Mayer‑aligned instructional design
 - Driven by tone and cadence from the `tone_of_voice_module`
 - Tagged using `cognitive_keyword_watchlist_module` with live scoring
 - Reviewed and editable in canvas before export
-- Output-ready for downstream modules including visual direction and wireframe generation
+- Output‑ready for downstream modules including visual direction and wireframe generation
+- Fully compliant with WCAG 2.2 AA accessibility guidelines
+- Automatically validated, scored and versioned
 
 ---
 
 ## 📦 Dependencies
 
+- `validation_layer` (internal, STEP 0)
 - `tone_of_voice_module`
 - `cognitive_keyword_watchlist_module`
 - `pedagogy_module` (always invoked)
@@ -44,29 +48,58 @@ Generate voice-first corporate learning scripts that are:
 
 ## 🪜 Execution Flow
 
-### ✅ STEP 1: Required Inputs
+### ✅ STEP 0: Validation Layer
 
-- Title or session topic
-- Key instructional points or messages
-- Target audience
-- Format (e.g., eLearning, video voiceover)
-- _(Optional)_ persona override, CTA, length preference
+```yaml
+name: validation_layer
+purpose: Catch incomplete or malformed inputs and halt early with actionable errors.
+inputs:
+  - script_brief              # required
+  - learning_outcomes         # required
+  - tone_of_voice             # required
+  - accessibility_prefs       # optional
+  - locale                    # optional, default: en-GB
+output: validation_report
+error_on_fail: true
+
+validation_rules:
+  missing_key_error: ["script_brief", "learning_outcomes", "tone_of_voice"]
+  regex:
+    segment_id: "^[A-Z]{3}[0-9]{4}$"
+    locale: "^[a-z]{2}-[A-Z]{2}$"
+  json_schema_refs:
+    - "./schemas/learning_outcome.schema.json"
+```
+
+The pipeline halts if `validation_report.pass` is `false`.
 
 ---
 
-### ✅ STEP 2: Script Generation Rules
+### ✅ STEP 1: Required Inputs
+
+- Title or session topic (string)
+- Key instructional points (list)
+- Target audience descriptor (string)
+- Format (eLearning, video voice‑over, etc.)
+- _(Optional)_ persona override, call‑to‑action, length preference
+
+---
+
+### ✅ STEP 2: Script Generation Rules
 
 - Use `video_gold_structure_module` for segment order and roles.
-- Use `instructional_segment_mapper` to assign segment IDs, roles, and traceability tags.
-- Always invoke `pedagogy_module` to tag segments with Bloom, Gagné, ARCS, SOLO.
+- Assign segment IDs, roles and traceability tags via `instructional_segment_mapper`.
+- Invoke `pedagogy_module` to tag segments with Bloom, Gagné, ARCS and SOLO.
 - Use `tone_of_voice_module` for tone and delivery.
-- Use `cognitive_keyword_watchlist_module` for keyword tagging and scoring.
-- Use `visual_style_module` and `videography_direction_module` for visual and gesture metadata.
-- After script generation, run `learning_theories_checklist_module` for pedagogical QA.
-- Run `accessibility_module` to ensure script and metadata are accessible.
-- Optionally, use `theory_enhancement_library` to enrich appendices.
+- Tag and score keywords with `cognitive_keyword_watchlist_module`.
+- Enrich visual and gesture metadata using `visual_style_module` and `videography_direction_module`.
+- After generation run `learning_theories_checklist_module` for pedagogical QA.
+- Run `accessibility_module` with British‑English lint and WCAG 2.2 AA checks (see configuration below).
+- Optionally enrich appendices via `theory_enhancement_library`.
 
-### ✅ STEP 3: Cue Metadata Per Segment
+---
+
+### ✅ STEP 3: Cue Metadata per Segment
 
 ```json
 {
@@ -74,10 +107,10 @@ Generate voice-first corporate learning scripts that are:
   "segment_role": "Core",
   "scaffolding_level": "Prompt + Example",
   "cue_type": "Motivational",
-  "keyword": "Own the stage.",
+  "keyword": "Assertiveness",
   "pedagogy": ["ARCS: Confidence", "Gagné: Elicit Performance", "Bloom: Apply"],
   "confidence": 0.91,
-  "confidence_method": "heuristic_v1",
+  "confidence_method": "scoring_v1.1.0",
   "detection_method": "RhetoricPatternMatcher",
   "reflection_prompt": "Have you seen this in action?",
   "visual_suggestion": {
@@ -86,55 +119,176 @@ Generate voice-first corporate learning scripts that are:
     "note": "Power Pose — suggest link only",
     "link_suggested": true
   },
-  "visual_tone": "Calm, instructional, trust-building"
+  "visual_tone": "Calm, instructional, trust‑building"
 }
 ```
 
 ---
 
-### ✅ STEP 4: Canvas-Based Output Flow
+### ✅ STEP 4: Canvas‑Based Output Flow
 
-- Output the full draft script to **canvas only**
-- Prompt user:
-  > "Please edit the script directly in the canvas. When you're ready, type 'Finalise it' to generate the export document."
+- Output the complete draft script to **canvas only**
+- Prompt the user:
+
+  > Please edit the script directly in the canvas.  
+  > When you are ready, type **Finalise it** to generate the export document.
 
 ---
 
-### ✅ STEP 5: Final Document Export (Triggered by User)
+### ✅ STEP 5: Final Document Export (Triggered by User)
 
 #### 📐 Document Style
 
 - A4 landscape
 - British English
-- 1 cm margins
-- Font: Arial or Calibri, 11–12 pt
+- 1 cm margins
+- Font: Arial or Calibri, 11–12 pt
 - Line spacing: 1.15
-- Footer: `Generated by: video_script_generator_module | Version: 5.5`
-
----
+- Footer: `Generated by: video_script_generator_module | Version: 5.6.0`
 
 #### 📄 Document Content Structure (Strict Order)
 
-1. **Document Title**
-    - Matches filename (e.g. "Presentation Skills - Video Script")
-
+1. **Document Title** – matches filename  
 2. **Segment Breakdown Table**
-    - Table:
 
-      | Segment ID | Segment Title | Script Segment | Keywords |
-      | ---------- | ------------- | -------------- | -------- |
+    | Segment ID | Segment Title | Script Segment | Keywords |
+    |------------|--------------|---------------|----------|
 
-3. **Full Script (Plain Text)**
-    - No segment IDs or delivery markers
+3. **Full Script (plain text)** – no segment IDs or delivery markers  
+4. **Appendices**
 
-4. **Appendices (All Mandatory)**
     - Cue Metadata Appendix
     - Visual Cue Index
     - Scene Direction Seed Table
     - Visual Style Seed Table
-    - Instructional Segment Map (from `instructional_segment_mapper`)
-    - Pedagogical Metadata (from `pedagogy_module` and checked by `learning_theories_checklist_module`)
-    - Accessibility Compliance Report (from `accessibility_module`)
-    - Theory Enhancement Appendix (optional, from `theory_enhancement_library`)
+    - Instructional Segment Map
+    - Pedagogical Metadata
+    - Accessibility Compliance Report
+    - Theory Enhancement Appendix (optional)
 
 ---
+
+## ♿ Accessibility Module Configuration
+
+```yaml
+accessibility_module:
+  gb_english_lint: true
+  gb_lint_dictionary: "./assets/gb_dict.txt"
+  fail_on_americanism: true
+  auto_replace_common: true
+  wcag_version: "2.2"
+  required_level: "AA"
+  checks:
+    contrast_ratio: {min: 4.5}
+    reading_age_flesch_kincaid: {max: 10}
+    captions_required: true
+    keyboard_navigation: true
+  report_format: "json"
+```
+
+---
+
+## 🔢 Confidence Scoring Specification (v1.1.0)
+
+```bash
+confidence_score = (0.35 * bloom_alignment) +
+                   (0.20 * arousal_score) +
+                   (0.15 * cognitive_load) +
+                   (0.15 * retrieval_prompts) +
+                   (0.15 * accessibility_grade)
+```
+
+All sub‑scores are normalised 0–100.  
+A run without retrieval prompts is capped at **85/100**.
+
+---
+
+## 🌐 Localisation Strategy
+
+```yaml
+localisation:
+  default_locale: "en-GB"
+  supported_locales: ["en-US", "fr-FR", "es-ES"]
+  string_ids: true
+  glossary_path: "./i18n/glossary.csv"
+  translation_pipeline:
+    - export_strings
+    - send_to_tms
+    - import_tm
+    - regenerate_scripts
+  fallback_policy: "default_locale"
+```
+
+---
+
+## ⚙️ Non‑Functional Requirements
+
+```yaml
+performance:
+  target_throughput: "25 scripts/hour"
+  max_input_size: "25,000 characters"
+  cache:
+    layer: redis
+    ttl: 24h
+concurrency:
+  max_workers: 8
+  queue_backpressure_threshold: 100
+monitoring:
+  metrics: ["latency_ms", "fail_rate", "cache_hit_rate"]
+  alerting: pagerduty
+```
+
+---
+
+## 📜 Interface Contracts (v1.0.0)
+
+| Module | Function | Inputs | Outputs | Error codes |
+|--------|----------|--------|---------|-------------|
+| tone_of_voice_module | `get_tone_profile` | `brand_id`, `audience_segment` | `tone_descriptor` | TOV‑404 |
+| accessibility_module | `run_gb_lint` | `script_draft` | `lint_report` | ACC‑400 |
+| theory_enhancement_library | `apply_frameworks` | `script_struct`, `frameworks[]` | `enhanced_script` | TEL‑501 |
+
+---
+
+## 🗂️ Versioning & Migrations
+
+```yaml
+versioning:
+  schema: semver
+  current_version: "5.6.0"
+  deprecations:
+    - id: "seg-reference-string"
+      since: "5.4.0"
+      removal_target: "6.0.0"
+      replacement: "cue_id"
+migration_guides:
+  - "docs/migrate_5.4_to_5.6.md"
+```
+
+---
+
+## ✅ Implementation Checklist (for internal use)
+
+| Gap Addressed | Implemented in | Owner | Status |
+|---------------|----------------|-------|--------|
+| Validation | STEP 0 | Engineering | ☐ |
+| GB English lint | Accessibility | Curriculum ID | ☐ |
+| Interface contracts | Appendix | Solutions Architect | ☐ |
+| Scoring spec | Confidence section | Learning Science | ☐ |
+| WCAG metrics | Accessibility | Accessibility Lead | ☐ |
+| Localisation pipeline | Localisation | Globalisation | ☐ |
+| NFRs | Non‑Functional Requirements | DevOps | ☐ |
+| Versioning | Versioning section | Platform PM | ☐ |
+
+---
+
+### 🔄 Change Log
+
+| Version | Date | Author | Notes |
+|---------|------|--------|-------|
+| 5.6.0 | 2025‑06‑06 | GPT‑automated merge | Applied validation layer, GB English enforcement, scoring v1.1.0, WCAG 2.2 AA, localisation, NFRs and semantic versioning. |
+| 5.5 | 2024‑??‑?? | Original author | Initial public release |
+
+---
+
+## 🔚 End of Specification
