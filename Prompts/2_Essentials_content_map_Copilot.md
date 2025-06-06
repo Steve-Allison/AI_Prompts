@@ -139,7 +139,7 @@ _For every row, populate all applicable columns (include the numeric Module ID
 
 ## 7 Export Standards
 
-Landscape A4 DOCX · 1 cm margins · sans‑serif 11 pt · header “Content Map” · footer timestamp & module reference.  
+Landscape A4 DOCX Height = 595.28 pt, Width = 841.89 pt · 1 cm margins · sans‑serif 11 pt · header “Content Map” · footer timestamp & module reference.  
 End every output section with the audit‑trail line.  
 Generate a downloadable link; **do not inline WordML/XML**.
 
