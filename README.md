@@ -1,6 +1,6 @@
 # 🧠 AI Instructional Module Registry
 
-Welcome to the **AI Instructional Modules Registry** — a modular, callable, version-controlled system for AI-driven instructional design, media scripting, accessibility validation, and content enrichment. 
+Welcome to the **AI Instructional Modules Registry** — a modular, callable, version-controlled system for AI-driven instructional design, media scripting, accessibility validation, and content enrichment.
 
 > **Note:** This project is now free from markdownlint or formatting restrictions. Module specifications are written for clarity, not to conform to external linting rules.
 
@@ -102,7 +102,7 @@ include_module("Cognitive_Keyword_Watchlist_Module")
 ```
 
 Modules can be extended, replaced, or combined in any order to suit your instructional or AI workflow.
----
+include_module("Cognitive_Keyword_Watchlist_Module")
 
 ## 🗂 Structure
 
